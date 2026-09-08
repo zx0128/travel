@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>🇵🇹 🇪🇸 2026 포르투갈 & 스페인 완벽 여행 가이드</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #172554;
+      --accent: #d97706;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+
+      --pt-color: #0f4c81;
+      --pt-light: #eff6ff;
+      --pt-border: #bfdbfe;
+
+      --sev-color: #991b1b;
+      --sev-light: #fef2f2;
+      --sev-border: #fecaca;
+
+      --bcn-color: #a81d24;
+      --bcn-light: #fff1f2;
+      --bcn-border: #fecdd3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 840px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f4c81 0%, #1e3a8a 45%, #991b1b 100%);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .flag-group {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    header h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.35;
+    }
+
+    header p {
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      margin-top: 6px;
+    }
+
+    .overview-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px;
+      gap: 8px;
+    }
+
+    .overview-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .overview-item .label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .overview-item .value {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .content-section {
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .section-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .guide-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .guide-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-top {
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-pt .card-top { background: var(--pt-light); border-bottom-color: var(--pt-border); }
+    .card-sev .card-top { background: var(--sev-light); border-bottom-color: var(--sev-border); }
+    .card-bcn .card-top { background: var(--bcn-light); border-bottom-color: var(--bcn-border); }
+
+    .card-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-flag {
+      font-size: 1.6rem;
+    }
+
+    .card-title-main {
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .card-pt .card-title-main { color: var(--pt-color); }
+    .card-sev .card-title-main { color: var(--sev-color); }
+    .card-bcn .card-title-main { color: var(--bcn-color); }
+
+    .card-days-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 12px;
+      color: white;
+    }
+
+    .card-pt .card-days-badge { background: var(--pt-color); }
+    .card-sev .card-days-badge { background: var(--sev-color); }
+    .card-bcn .card-days-badge { background: var(--bcn-color); }
+
+    .card-body {
+      padding: 16px 20px;
+      flex: 1;
+    }
+
+    .card-dates {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .card-highlights {
+      list-style: none;
+      font-size: 0.86rem;
+      line-height: 1.65;
+      color: #334155;
+    }
+
+    .card-highlights li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 4px;
+    }
+
+    .card-highlights li::before {
+      content: "•";
+      font-weight: bold;
+      position: absolute;
+      left: 2px;
+      color: var(--accent);
+    }
+
+    .card-footer {
+      padding: 14px 20px;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+    }
+
+    .action-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: white;
+      border-radius: 8px;
+      transition: opacity 0.2s;
+    }
+
+    .card-pt .action-btn { background: var(--pt-color); }
+    .card-sev .action-btn { background: var(--sev-color); }
+    .card-bcn .action-btn { background: var(--bcn-color); }
+
+    .guide-card:hover .action-btn {
+      opacity: 0.92;
+    }
+
+    .info-box {
+      background: #f8fafc;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      font-size: 0.84rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .info-box strong {
+      color: var(--text);
+    }
+
+    footer {
+      padding: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: #f8fafc;
+    }
+
+    @media (max-width: 600px) {
+      .overview-bar {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      header h1 {
+        font-size: 1.28rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="flag-group">🇵🇹 🇪🇸</div>
+    <h1>2026 포르투갈 & 스페인 완벽 여행 가이드</h1>
+    <p>15박 16일 전 일정 미식 & 정밀 지도 통합 포털</p>
+  </header>
+
+  <!-- Trip Overview Summary -->
+  <div class="overview-bar">
+    <div class="overview-item">
+      <span class="label">📅 여행 기간</span>
+      <span class="value">9/11(금) ~ 9/26(토) (15박 16일)</span>
+    </div>
+    <div class="overview-item">
+      <span class="label">📍 여행 도시</span>
+      <span class="value">리스본 ➔ 포르투 ➔ 세비야 ➔ 그라나다 ➔ 바르셀로나</span>
+    </div>
+    <div class="overview-item">
+      <span class="label">🗺️ 정밀 지도</span>
+      <span class="value">전 일정 100% 구글맵 단독 핀 연동</span>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <p class="section-desc">원하시는 권역의 카드를 터치하면 해당 일정의 상세 시간표, 동선 거리, 미식 메뉴 및 구글 지도 핀이 탑재된 가이드로 바로 이동합니다.</p>
+
+    <!-- Card 1: Portugal (Lisbon & Porto) -->
+    <a class="guide-card card-pt" href="리스본포르투_완성본.html">
+      <div class="card-top">
+        <div class="card-title-group">
+          <span class="card-flag">🇵🇹</span>
+          <span class="card-title-main">포르투갈 (리스본 & 포르투)</span>
+        </div>
+        <span class="card-days-badge">Day 1 ~ Day 7</span>
+      </div>
+      <div class="card-body">
+        <div class="card-dates">🗓️ 9/11(금) ~ 9/17(목) · 6박 7일</div>
+        <ul class="card-highlights">
+          <li><strong>리스본:</strong> 벨렝탑, 제로니무스 수도원, 코메르시우 광장, 신트라·카스카이스 근교</li>
+          <li><strong>포르투:</strong> CP 기차 이동, 상벤투역 아줄레주, 동 루이스 1세 다리, 와이너리 투어</li>
+          <li><strong>미식:</strong> 파스텔 드 나타, 비파냐, 프란세지냐, 마토지뉴시 해변 해산물, 바스쿠다가마 푸드코트</li>
+          <li><strong>부록:</strong> 리스본 & 포르투 비상 백업 맛집 리스트 탑재</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <div class="action-btn">포르투갈 일정 보러 가기 ▶</div>
+      </div>
+    </a>
+
+    <!-- Card 2: Spain - Andalucia (Sevilla & Granada) -->
+    <a class="guide-card card-sev" href="세비야그라나다_완성본.html">
+      <div class="card-top">
+        <div class="card-title-group">
+          <span class="card-flag">🇪🇸</span>
+          <span class="card-title-main">스페인 안달루시아 (세비야 & 그라나다)</span>
+        </div>
+        <span class="card-days-badge">Day 8 ~ Day 11</span>
+      </div>
+      <div class="card-body">
+        <div class="card-dates">🗓️ 9/18(금) ~ 9/21(월) · 3박 4일</div>
+        <ul class="card-highlights">
+          <li><strong>세비야:</strong> 야간버스 새벽 도착 연계, 스페인 광장, 세비야 대성당 & 히랄다탑, 알카사르</li>
+          <li><strong>그라나다:</strong> 렌페 이동, 알함브라 궁전 전일 투어, 산 니콜라스 전망대 황금빛 야경</li>
+          <li><strong>미식:</strong> 츄러스 오픈런, 이베리코 볼살스튜, 플라멩코 타파스, 누에바 광장 보데가, 후안 라나스 석양 디너</li>
+          <li><strong>부록:</strong> 안달루시아 웨이팅/휴무 대비 비상 대안 맛집 테이블 탑재</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <div class="action-btn">세비야 & 그라나다 일정 보러 가기 ▶</div>
+      </div>
+    </a>
+
+    <!-- Card 3: Spain - Catalunya (Barcelona) -->
+    <a class="guide-card card-bcn" href="바르셀로나_완성본.html">
+      <div class="card-top">
+        <div class="card-title-group">
+          <span class="card-flag">🇪🇸</span>
+          <span class="card-title-main">스페인 카탈루냐 (바르셀로나 & 귀국)</span>
+        </div>
+        <span class="card-days-badge">Day 12 ~ Day 16</span>
+      </div>
+      <div class="card-body">
+        <div class="card-dates">🗓️ 9/22(화) ~ 9/26(토) · 4박 5일</div>
+        <ul class="card-highlights">
+          <li><strong>바르셀로나:</strong> 부엘링 항공 이동, 고딕·보른 지구 산책, 가우디 버스투어, 몬주익 분수쇼</li>
+          <li><strong>해변 & 쇼핑:</strong> 람블라스 거리, 보케리아 시장, 바르셀로네타 해변 자전거 라이딩, 그라시아 쇼핑</li>
+          <li><strong>미식:</strong> 비니투스 꿀대구, 바르셀로네타 빠에야, 라 푸비야 점심, 존 케이크 본점, 부보 초콜릿</li>
+          <li><strong>귀국:</strong> 카탈루냐 미술관 전망대, 공항버스 A1, 엘프라트 공항 출국 동선</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <div class="action-btn">바르셀로나 일정 보러 가기 ▶</div>
+      </div>
+    </a>
+
+    <!-- Helpful Tips -->
+    <div class="info-box">
+      <strong>💡 여행지 현장 활용 팁</strong><br>
+      • <strong>모바일 홈 화면 바로가기 추가:</strong> 스마트폰 브라우저(Safari 또는 Chrome) 메뉴에서 <strong>'홈 화면에 추가'</strong>를 선택하시면 앱처럼 원터치로 실행하실 수 있습니다.<br>
+      • <strong>구글 지도 연동:</strong> 각 일정의 <strong>'장소명 📍'</strong> 링크를 터치하시면 구글 지도 앱으로 즉시 연결되어 현장 길찾기 및 도보 내비게이션으로 바로 활용됩니다.
+    </div>
+  </div>
+
+  <footer>
+    2026 Portugal & Spain Travel Guide · GitHub Pages Deployed
+  </footer>
+</div>
+
+</body>
+</html>

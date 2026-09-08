@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>스페인(세비야 & 그라나다) 확정 미식 가이드</title>
+  <style>
+    :root {
+      --primary: #991b1b;
+      --primary-dark: #7f1d1d;
+      --accent: #d97706;
+      --bg: #fdfaf6;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --highlight: #fef3c7;
+      --badge-transit: #2563eb;
+      --badge-hotel: #475569;
+      --badge-spot: #059669;
+      --badge-food: #dc2626;
+      --badge-cafe: #db2777;
+      --badge-shop: #7c3aed;
+      --badge-breakfast: #059669;
+      --badge-lunch: #0284c7;
+      --badge-dinner: #7c2d12;
+      --badge-snack: #d97706;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 840px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 22px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      color: #fecaca;
+      margin-top: 4px;
+    }
+
+    .home-nav {
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      transition: background 0.2s;
+    }
+
+    .home-nav:hover {
+      background: rgba(0, 0, 0, 0.35);
+      color: #ffffff;
+    }
+
+    .nav-tabs {
+      display: flex;
+      background: var(--primary-dark);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 90px;
+      padding: 12px 6px;
+      background: none;
+      border: none;
+      color: #cbd5e1;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      color: #ffffff;
+      background: var(--primary);
+      border-bottom: 3px solid #fbbf24;
+    }
+
+    .slider-container {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .slide {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .day-header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .day-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .day-city {
+      font-size: 0.88rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .step-item {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 16px;
+    }
+
+    .step-item::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 24px;
+      bottom: -18px;
+      width: 2px;
+      background: #cbd5e1;
+    }
+
+    .step-item:last-child::before {
+      display: none;
+    }
+
+    .step-dot {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid var(--primary);
+    }
+
+    .item-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .card-transit { border-left: 4px solid var(--badge-transit); background: #f8faff; }
+    .card-hotel { border-left: 4px solid var(--badge-hotel); background: #f8fafc; }
+    .card-spot { border-left: 4px solid var(--badge-spot); }
+    .card-food { border-left: 4px solid var(--badge-food); }
+    .card-cafe { border-left: 4px solid var(--badge-cafe); }
+    .card-shop { border-left: 4px solid var(--badge-shop); }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .badge-transit { background: var(--badge-transit); }
+    .badge-hotel { background: var(--badge-hotel); }
+    .badge-spot { background: var(--badge-spot); }
+    .badge-food { background: var(--badge-food); }
+    .badge-cafe { background: var(--badge-cafe); }
+    .badge-shop { background: var(--badge-shop); }
+
+    .place-name {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .place-link {
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s;
+    }
+
+    .place-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .map-icon {
+      font-size: 0.85rem;
+    }
+
+    .dist-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #64748b;
+      background: #e2e8f0;
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+
+    .price-badge {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #9a3412;
+      background: var(--highlight);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .reservation-status {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+    .res-confirmed { background: #dcfce7; color: #166534; }
+    .res-walkin { background: #f1f5f9; color: #475569; }
+    .res-recommended { background: #fee2e2; color: #991b1b; }
+
+    .menu-list {
+      list-style: none;
+      font-size: 0.86rem;
+      line-height: 1.55;
+      margin-top: 6px;
+    }
+
+    .menu-list li {
+      margin-bottom: 4px;
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .menu-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .menu-highlight {
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .tip-box {
+      margin-top: 8px;
+      padding: 8px 12px;
+      background: #f8fafc;
+      border-left: 3px solid var(--primary);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-radius: 0 6px 6px 0;
+      line-height: 1.45;
+    }
+
+    .tip-warning {
+      background: #fef3c7;
+      border-left-color: #d97706;
+      color: #92400e;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+    }
+
+    .ctrl-btn {
+      padding: 10px 20px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .ctrl-btn:disabled {
+      background: #cbd5e1;
+      cursor: not-allowed;
+    }
+
+    .ctrl-btn:hover:not(:disabled) {
+      opacity: 0.9;
+    }
+
+    .backup-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    .backup-table th, .backup-table td {
+      padding: 10px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .backup-table th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <a href="index.html" class="home-nav">🏠 전체 일정 목록 (Home)</a>
+    <h1>🇪🇸 스페인(세비야 & 그라나다) 전체 일정 & 미식 가이드</h1>
+    <p>세비야 새벽 도착 연계 · 전 일정 100% 독립 분할 · 검증 완료 고유 좌표 링크 장착</p>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="setSlide(0)">Day 8 세비야</button>
+    <button class="tab-btn" onclick="setSlide(1)">Day 9 세비야</button>
+    <button class="tab-btn" onclick="setSlide(2)">Day 10 그라나다</button>
+    <button class="tab-btn" onclick="setSlide(3)">Day 11 그라나다</button>
+    <button class="tab-btn" onclick="setSlide(4)">🚨 안달루시아 백업</button>
+  </div>
+
+  <!-- Slides Container -->
+  <div class="slider-container">
+
+    <!-- Day 8 -->
+    <div class="slide active">
+      <div class="day-header">
+        <div class="day-title">Day 8 (9/18 금)</div>
+        <div class="day-city">세비야 도착 ➔ 츄러스 ➔ 스페인광장 ➔ 이베리코 볼살스튜</div>
+      </div>
+
+      <!-- Bus Arrival -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-transit">
+          <span class="badge badge-transit">야간버스 도착 🚌</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/fxwMNSDLqPQoXEWz8" target="_blank">
+              세비야 플라사 데 아르마스 터미널 (Plaza de Armas) <span class="map-icon">📍</span>
+            </a>
+            <span class="price-badge">05:45 세비야 도착</span>
+          </div>
+          <div class="tip-box">
+            • <strong>도착:</strong> 리스본 오리엔트 출발 FLIXBUS 야간버스 05:45 정시 도착<br>
+            • 💡 터미널에서 숙소(호텔 도냐 리나)까지 우버/택시로 약 10~15분 소요.
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel Drop Off -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">숙소 짐보관</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Hotel+Do%C3%B1a+Lina,+Plaza+de+Do%C3%B1a+Elvira,+Sevilla" target="_blank">
+              호텔 도냐 리나 (Hotel Doña Lina) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">체크인 전 짐보관</span>
+          </div>
+          <div class="tip-box">
+            • <strong>주소:</strong> Plaza de Doña Elvira 1, 41004 Sevilla<br>
+            • 💡 산타 크루즈 지구 중심 위치. 캐리어 맡겨두고 가벼운 차림으로 아침 츄러스 먹으러 출발.
+          </div>
+        </div>
+      </div>
+
+      <!-- Food: Bar El Comercio -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">아침 조식 (1904년 노포 츄러스)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Bar+El+Comercio,+Calle+Lineros+9,+Sevilla" target="_blank">
+              바 엘 코메르시오 (Bar El Comercio) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">숙소에서 691m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">원조 굵은 수제 츄러스 (Rueda de Churros):</span> 겉바속촉 쫄깃한 세비야 전통 츄러스 (€3.50~€5.00)</li>
+            <li><span class="menu-highlight">진한 핫초콜릿 (Chocolate Caliente):</span> 찍먹용 진득한 수제 초코 (€2.50~€3.50)</li>
+          </ul>
+          <div class="tip-box">💡 아침 식사 후 살바도르 광장과 시청 주변 골목 산책하며 숙소로 복귀.</div>
+        </div>
+      </div>
+
+      <!-- Hotel Check-in -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">숙소 체크인 & 휴식</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Hotel+Do%C3%B1a+Lina,+Plaza+de+Do%C3%B1a+Elvira,+Sevilla" target="_blank">
+              호텔 도냐 리나 (Hotel Doña Lina) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">도보 691m 복귀</span>
+          </div>
+          <div class="tip-box">💡 13시 정식 체크인 후 야간 이동 피로 풀기 위해 샤워 및 침대에서 재정비 휴식.</div>
+        </div>
+      </div>
+
+      <!-- Food: Bodega Santa Cruz -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">점심 타파스 (현지 바 스탠딩)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Bodega+Santa+Cruz+Las+Columnas,+Calle+Rodrigo+Caro+1,+Sevilla" target="_blank">
+              보데가 산타 크루즈 (Bodega Santa Cruz - Las Columnas) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">숙소에서 143m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">몬타디토 (미니 바게트 샌드위치):</span> 개당 €2.50~€3.50 (<strong>Pringá-돼지고기 스튜 샌드위치 필수!</strong>)</li>
+            <li><span class="menu-highlight">살모레호 (Salmorejo):</span> 걸쭉하고 상큼한 안달루시아 토마토 냉수프 (€3.50~€4.50)</li>
+            <li><span class="menu-highlight">뽈뽀 알리오 올리오 (Pulpo):</span> 부드러운 마늘 올리브유 문어 (€4.50~€6.00)</li>
+            <li><span class="menu-highlight">클라라 (레몬 생맥주):</span> 청량한 갈증 해소 맥주 (€1.80~€2.50)</li>
+          </ul>
+          <div class="tip-box">💡 바 카운터에 분필로 주문 내역을 적어주는 세비야 최고 인기 정통 타베르나.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 세비야 대학 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">역사적 명소</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Universidad+de+Sevilla,+Calle+San+Fernando" target="_blank">
+              세비야 대학 (옛 왕립 담배공장) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">143m 식당에서 587m</span>
+          </div>
+          <div class="tip-box">💡 오페라 '카르멘'의 실제 배경이 된 거대한 18세기 바로크 양식의 옛 담배공장 건물.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 스페인 광장 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">세비야 랜드마크</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/nhQJR7zTYmDqkCYf7" target="_blank">
+              스페인 광장 (Plaza de España) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">551m</span>
+          </div>
+          <div class="tip-box">💡 반원형 회랑과 타일 벤치, 운하가 어우러진 스페인에서 가장 웅장한 광장. 낮 햇살 포토스팟!</div>
+        </div>
+      </div>
+
+      <!-- Spot: 황금의 탑 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">일몰 강변 산책</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Torre+del+Oro,+Sevilla" target="_blank">
+              황금의 탑 (Torre del Oro) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">1km</span>
+          </div>
+          <div class="tip-box">💡 과달퀴비르 강변을 따라 석양을 보며 걷는 일몰 산책 코스.</div>
+        </div>
+      </div>
+
+      <!-- Food: La Brunilda Tapas -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">저녁 (20:30 식사)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=La+Brunilda,+Calle+Galera+5,+Sevilla" target="_blank">
+              라 브루닐다 (La Brunilda Tapas) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">713m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">이베리코 돼지 볼살 스튜 (Carrillada):</span> 고구마 퓨레와 사르르 녹는 볼살 (€8.90)</li>
+            <li><span class="menu-highlight">오리 콩피 & 당근 퓨레:</span> 겉바속촉 오리 다리 요리 (€8.90)</li>
+            <li><span class="menu-highlight">구운 이베리코 프레사 (Presa):</span> 미디엄 레어로 구운 특수부위 스테이크 (€9.50)</li>
+            <li><span class="menu-highlight">트러플 버섯 리조또:</span> 진한 트러플 향 (€8.90)</li>
+          </ul>
+          <div class="tip-box">💡 20:30 저녁 타임 시작에 맞춰 오픈런 또는 사전 방문 권장.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 이사벨 2세 다리 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">야경 명소</span>
+          <div class="place-name">
+            <a class="place-link" href="https://www.google.com/maps/place/%EC%9D%B4%EC%82%AC%EB%B2%A8+2%EC%84%B8+%EB%8B%A4%EB%A6%AC/@37.3864213,-6.007147,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c136e2b90a5:0x4c0bcc574dff2913!8m2!3d37.3864171!4d-6.0022761!16s%2Fg%2F121p16jf" target="_blank">
+              이사벨 2세 다리 (트리아나 다리) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">353m</span>
+          </div>
+          <div class="tip-box">💡 강 건너 트리아나 지구의 야경 불빛과 다리 철교 조명을 감상하고 숙소(1.1km)로 귀가.</div>
+        </div>
+      </div>
+
+      <!-- Hotel Return -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">숙소 복귀</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Hotel+Do%C3%B1a+Lina,+Plaza+de+Do%C3%B1a+Elvira,+Sevilla" target="_blank">
+              호텔 도냐 리나 (Hotel Doña Lina) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">1.1km 도보 복귀</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 9 -->
+    <div class="slide">
+      <div class="day-header">
+        <div class="day-title">Day 9 (9/19 토)</div>
+        <div class="day-city">대성당 ➔ 알카사르 ➔ 꿀가지튀김 ➔ 메트로폴파라솔 ➔ 소꼬리찜</div>
+      </div>
+
+      <!-- Hotel Start -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">숙소 출발</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Hotel+Do%C3%B1a+Lina,+Plaza+de+Do%C3%B1a+Elvira,+Sevilla" target="_blank">
+              호텔 도냐 리나 (Hotel Doña Lina) <span class="map-icon">📍</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Food: La Cacharrería -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">아침 조식 (감성 브런치)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=La+Cacharrer%C3%ADa,+Calle+Regina+14,+Sevilla" target="_blank">
+              라 까차레리아 (La Cacharrería de Sevilla) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">숙소에서 1.1km</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">토스타다 (Tostada):</span> 올리브유와 간 토마토, 하몽을 얹은 바삭한 전통 토스트 (€4.50~€6.00)</li>
+            <li><span class="menu-highlight">착즙 생오렌지 주스 & 스페셜티 커피:</span> 상큼한 비타민 충전 (€3.00~€3.80)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Spot: 세비야 알카사르 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">왕궁 유적</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Real+Alc%C3%A1zar+de+Sevilla" target="_blank">
+              세비야 알카사르 (Real Alcázar de Sevilla) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">1.3km</span>
+          </div>
+          <div class="tip-box tip-warning">⚠️ <strong>사전 예약 필수!</strong> 이슬람과 기독교 양식이 융합된 무데하르 양식의 화려한 궁전과 정원.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 세비야 대성당 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">세계 3대 고딕 대성당</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Catedral+de+Sevilla" target="_blank">
+              세비야 대성당 (Catedral de Sevilla) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">알카사르에서 400m</span>
+          </div>
+          <div class="tip-box">
+            • 💡 세계에서 가장 큰 고딕 양식 성당. 콜럼버스의 묘, 황금 제단, 오렌지 안뜰(Patio de los Naranjos) 내부 관람.
+          </div>
+        </div>
+      </div>
+
+      <!-- Spot: 히랄다 탑 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">종탑 전망대 (13:30 예약)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://www.google.com/maps/place/%ED%9E%88%EB%9E%84%EB%8B%A4/@37.3857908,-5.9941252,18.37z/data=!3m1!5s0xd126e4185f5e7ad:0xec42323e896d024d!4m14!1m7!3m6!1s0xd126c1755b54781:0xe49da05de71e6de5!2z7IS467mE7JW8IOuMgOyEseuLuQ!8m2!3d37.3858247!4d-5.9931068!16zL20vMDVodmg2!3m5!1s0xd126c1a1eb7d42b:0x9d4fd647e46b7247!8m2!3d37.3861784!4d-5.9926137!16zL20vMDg3ZHR6" target="_blank">
+              히랄다 탑 (La Giralda) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">성당 내부 연결</span>
+          </div>
+          <div class="tip-box tip-warning">
+            ⏰ <strong>13:30 예약 시간 필수 준수:</strong><br>
+            • <strong>여권 원본 반드시 지참!</strong><br>
+            • 계단 대신 35개의 완만한 경사로를 걸어 올라가 세비야 시내를 360도로 내려다보는 대표 전망대.
+          </div>
+        </div>
+      </div>
+
+      <!-- Spot: 산타 크루즈 지구 & 오렌지트리 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">구시가지 골목 & 쇼핑</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Barrio+de+Santa+Cruz,+Sevilla" target="_blank">
+              산타 크루즈 지구 (Barrio Santa Cruz) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">302m</span>
+          </div>
+          <div class="tip-box">
+            • <strong>기념품 쇼핑:</strong> <a class="place-link" href="https://maps.google.com/?q=Orange+Tree+Sevilla" target="_blank"><strong>오렌지트리 세비야 (Orange Tree Sevilla) 📍</strong></a><br>
+            • 💡 오렌지꽃 향수, 비누, 아기자기한 감성 소품 구매 및 하얀 골목길 산책.
+          </div>
+        </div>
+      </div>
+
+      <!-- Food: La Bartola -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">점심 (모던 타파스)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=La+Bartola,+Calle+San+Jos%C3%A9+24,+Sevilla" target="_blank">
+              라 바르톨라 (La Bartola) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">360m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">[필수] 사탕수수 꿀을 곁들인 바삭 가지 튀김 (Berenjenas con Miel):</span> 단짠 바삭의 정석 (€5.50~€7.00)</li>
+            <li><span class="menu-highlight">이베리코 플루마/프레사 스테이크 (Pluma Ibérica):</span> (€9.50~€13.00)</li>
+            <li><span class="menu-highlight">주키니 호박 롤 & 치즈:</span> (€5.50~€6.50)</li>
+            <li><span class="menu-highlight">틴토 데 베라노 (Tinto de Verano):</span> 시원한 레몬 와인 (€2.80~€3.50)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Spot: 살바도르 광장 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">광장 쉼터</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Quiosco+plaza+del+Salvador,+Sevilla" target="_blank">
+              살바도르 광장 (Plaza del Salvador) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">574m</span>
+          </div>
+          <div class="tip-box">💡 붉은빛 살바도르 성당 앞 노천 바들이 모여 있는 활기찬 로컬 광장.</div>
+        </div>
+      </div>
+
+      <!-- Cafe: Cris Cheesecake -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-cafe">
+          <span class="badge badge-cafe">치즈케이크 포장</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=La+Tarta+de+la+Madre+de+Cris+-+Sevilla" target="_blank">
+              라 타르타 데 라 마드레 데 크리스 세비야 점 <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">38m</span>
+          </div>
+          <div class="tip-box">💡 살바도르 광장 바로 앞. 입에서 녹는 인생 바스크 치즈케이크 조각 & 아이스 커피 포장.</div>
+        </div>
+      </div>
+
+      <!-- Cafe: Catunambu -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-cafe">
+          <span class="badge badge-cafe">피카토스테 포장</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Cafeteria+Catunambu,+Calle+Sierpes,+Sevilla" target="_blank">
+              카투남부 (Cafés Catunambú) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">286m</span>
+          </div>
+          <div class="tip-box">💡 세비야 전통 튀김 토스트 간식 피카토스테(Picatoste) 테이크아웃.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 이사벨 2세 다리 피크닉 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">강변 디저트 피크닉</span>
+          <div class="place-name">
+            <a class="place-link" href="https://www.google.com/maps/place/%EC%9D%B4%EC%82%AC%EB%B2%A8+2%EC%84%B8+%EB%8B%A4%EB%A6%AC/@37.3864213,-6.007147,17z/data=!3m1!4b1!4m6!3m5!1s0xd126c136e2b90a5:0x4c0bcc574dff2913!8m2!3d37.3864171!4d-6.0022761!16s%2Fg%2F121p16jf" target="_blank">
+              이사벨 2세 다리 (Puente de Isabel II) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">931m</span>
+          </div>
+          <div class="tip-box">💡 다리 난간이나 강변 계단에 걸터앉아 포장해 온 치즈케이크와 피카토스테, 커피 먹으며 휴식.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 트리아나 지구 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">플라멩코 & 도자기 마을</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Barrio+de+Triana,+Sevilla" target="_blank">
+              트리아나 (Triana) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">다리 건너 841m</span>
+          </div>
+          <div class="tip-box">💡 세비야 도자기 타일 공방과 골목길 감성 산책.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 메트로폴 파라솔 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">현대 랜드마크 & 전망대</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Setas+de+Sevilla,+Plaza+de+la+Encarnaci%C3%B3n" target="_blank">
+              메트로폴 파라솔 (Setas de Sevilla) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">2.1km</span>
+          </div>
+          <div class="tip-box">💡 세계 최대 규모의 목조 건축물. 상층 구불구불한 산책로를 걸으며 세비야 360도 전경 조망.</div>
+        </div>
+      </div>
+
+      <!-- Food: El Pasaje -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">저녁 (20:00 예약)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/m5LWQa2PtJqkHeJ46" target="_blank">
+              El Pasaje Santa María la Blanca (2호점) <span class="map-icon">📍</span>
+            </a>
+            <span class="reservation-status res-confirmed">Salón 좌석 예약</span>
+            <span class="price-badge">2인 약 €45 ~ €60</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">[시그니처] 안달루시아 정통 소꼬리찜 (Rabo de Toro):</span> 진한 와인 소스에 졸여낸 최고급 요리 (€17.00~€21.00)</li>
+            <li><span class="menu-highlight">트러플 크림 타르타르 / 카르파초:</span> 부드러운 전채 타파스 (€12.00~€15.00)</li>
+            <li><span class="menu-highlight">푸아그라 토스트:</span> 사과 콤포트와 푸아그라 (€6.50~€8.00)</li>
+            <li><span class="menu-highlight">리오하 레드와인 바틀:</span> (€16.00~€24.00)</li>
+          </ul>
+          <div class="tip-box">💡 20:00 Salón(살롱) 좌석 예약 완료. 메트로폴 파라솔 구경 후 여유롭게 이동하여 식사.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 스페인 광장 (야경) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">야경 산책</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/nhQJR7zTYmDqkCYf7" target="_blank">
+              스페인 광장 (Plaza de España - 야경) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">1.1km</span>
+          </div>
+          <div class="tip-box">💡 조명이 은은하게 비치는 운하와 회랑의 환상적인 야경 감상 후 숙소(897m)로 귀가.</div>
+        </div>
+      </div>
+
+      <!-- Hotel Return -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">숙소 복귀</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Hotel+Do%C3%B1a+Lina,+Plaza+de+Do%C3%B1a+Elvira,+Sevilla" target="_blank">
+              호텔 도냐 리나 (Hotel Doña Lina) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">897m 도보 복귀</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 10 -->
+    <div class="slide">
+      <div class="day-header">
+        <div class="day-title">Day 10 (9/20 일)</div>
+        <div class="day-city">근교 투어(론다·프리힐리아나·네르하) ➔ 그라나다 입성 & 1음료 1무료타파스</div>
+      </div>
+
+      <!-- Hotel Checkout -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">숙소 체크아웃</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Hotel+Do%C3%B1a+Lina,+Plaza+de+Do%C3%B1a+Elvira,+Sevilla" target="_blank">
+              호텔 도냐 리나 (체크아웃) <span class="map-icon">📍</span>
+            </a>
+          </div>
+          <div class="tip-box">💡 아침 체크아웃 후 투어 차량 미팅 장소로 이동.</div>
+        </div>
+      </div>
+
+      <!-- Tour Card -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot" style="border-left: 4px solid #059669; background: #f0fdf4;">
+          <span class="badge badge-spot" style="background:#059669;">일일 근교 투어 🚌</span>
+          <div class="place-name">
+            <span>세비야 ➔ 론다 ➔ 프리힐리아나 ➔ 네르하 ➔ 그라나다 샌딩 투어</span>
+            <span class="price-badge">09:00 ~ 19:00</span>
+          </div>
+          <div class="tip-box" style="background:#ffffff;">
+            • <strong>투어 코스:</strong><br>
+              1. <strong>론다 (Ronda):</strong> 누에보 다리와 절벽 협곡 조망<br>
+              2. <strong>프리힐리아나 (Frigiliana):</strong> 안달루시아의 하얀 산골 마을 골목 산책<br>
+              3. <strong>네르하 (Nerja):</strong> 유럽의 발코니 지중해 바다 전망<br>
+            • 💡 투어 종료 후 전용 차량으로 그라나다 숙소 앞 하차(약 212.9km 이동).
+          </div>
+        </div>
+      </div>
+
+      <!-- Granada Hotel Check-in -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">그라나다 숙소 체크인</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Hotel+Inglaterra,+Calle+Cetti+Meriem+4,+Granada" target="_blank">
+              호텔 잉글라테라 (Hotel Inglaterra, Granada) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">투어 샌딩 212.9km 이동</span>
+          </div>
+          <div class="tip-box">
+            • <strong>주소:</strong> Calle Cetti Meriem 4, 18010 Granada<br>
+            • 💡 그라나다 중심가에 위치. 체크인 및 짐 정리 후 도보 140m 앞 누에바 광장으로 출발.
+          </div>
+        </div>
+      </div>
+
+      <!-- Spot: 누에바 광장 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">그라나다 중심 광장</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/ZPDCWBVJH8EPC9ZA8" target="_blank">
+              누에바 광장 (Plaza Nueva) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">140m</span>
+          </div>
+          <div class="tip-box">💡 알바이신 지구와 알함브라로 이어지는 그라나다 여행의 베이스캠프. 활기찬 저녁 분위기 체감.</div>
+        </div>
+      </div>
+
+      <!-- Food: Bar Los Diamantes -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">저녁 (1음료 1무료 타파스 노포)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Bar+Los+Diamantes,+Calle+Navas+28,+Granada" target="_blank">
+              바 로스 디아만테스 나바스 거리 점 (Bar Los Diamantes) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">395m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">알함브라 1925 시그니처 병맥주:</span> 병당 약 €3.50~€3.80 ➔ <strong>무료 튀김 타파스 1접시 자동 무료 제공!</strong></li>
+            <li><span class="menu-highlight">틴토 데 베라노 / 와인:</span> 잔당 약 €2.80~€3.20 ➔ <strong>무료 타파스 1접시 제공</strong></li>
+            <li><span class="menu-highlight">무료 서빙 순서:</span> 1차(모둠 생선튀김) ➔ 2차(오징어/베이비 한치튀김) ➔ 3차(마늘 새우/조개)</li>
+            <li><span class="menu-highlight">[유료 단품 추가] 맛조개 철판구이 (Navajas):</span> 신선하고 쫄깃한 해산물 구이 (€10~€12)</li>
+          </ul>
+          <div class="tip-box">💡 식사 후 나바스 골목을 산책하며 숙소(395m)로 편안하게 복귀.</div>
+        </div>
+      </div>
+
+      <!-- Hotel Return -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">숙소 복귀</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Hotel+Inglaterra,+Calle+Cetti+Meriem+4,+Granada" target="_blank">
+              호텔 잉글라테라 (Hotel Inglaterra) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">395m 도보 복귀</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 11 -->
+    <div class="slide">
+      <div class="day-header">
+        <div class="day-title">Day 11 (9/21 월)</div>
+        <div class="day-city">알함브라 궁전 ➔ 대성당 & 알카이세리아 ➔ 궁전뷰 일몰 디너</div>
+      </div>
+
+      <!-- Hotel Start -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">숙소 출발</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Hotel+Inglaterra,+Calle+Cetti+Meriem+4,+Granada" target="_blank">
+              호텔 잉글라테라 (Hotel Inglaterra) <span class="map-icon">📍</span>
+            </a>
+          </div>
+          <div class="tip-box">💡 아침 식사는 숙소 조식 또는 알함브라 이동 전 광장 카페에서 간단히 해결.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 알함브라 궁전 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">이슬람 건축의 꽃 (투어)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Alhambra,+Granada" target="_blank">
+              알함브라 (Alhambra, Granada) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">849m</span>
+          </div>
+          <div class="tip-box tip-warning">
+            ⏰ <strong>가이드 미팅 08:30 / 나사리 궁전 입장 09:00 정각:</strong><br>
+            • <strong>여권 원본 필수 지참!</strong> 아라베스크 문양의 극치 나사리 궁전, 헤네랄리페 정원, 알카사바 요새 관람.
+          </div>
+        </div>
+      </div>
+
+      <!-- Food: Los Manueles -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">점심 (1917년 전통 타베르나)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Los+Manueles+Reyes+Cat%C3%B3licos,+Granada" target="_blank">
+              Los Manueles Granada (Taberna Desde 1917) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">궁전 하산 후 1km</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">[시그니처] 자이언트 하몽 크로켓 (Croquetas Gigantes):</span> 개당 €2.80 (어른 주먹 크기)</li>
+            <li><span class="menu-highlight">[특산] 하몽 트레베레스 (Jamón de Trevélez):</span> 시에라네바다 고산지대 하몽 (€14~€18)</li>
+            <li><span class="menu-highlight">구운 가지 튀김 & 알함브라 생맥주:</span> (€5.00~€8.00)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Spot: 그라나다 대성당 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">르네상스 대성당 & 구시가지</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Catedral+de+Granada" target="_blank">
+              그라나다 대성당 (Catedral de Granada) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">85m</span>
+          </div>
+          <div class="tip-box">💡 눈부신 백색과 황금빛 돔으로 장식된 웅장한 대성당 내부 감상 및 성당 주변 비블람블라 광장 산책.</div>
+        </div>
+      </div>
+
+      <!-- Shop: 알카이세리아 거리 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-shop">
+          <span class="badge badge-shop">아랍 전통 시장</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/cyp4wyw6p8sKhBsq7" target="_blank">
+              알카이세리아 거리 (La Alcaicería) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">125m</span>
+          </div>
+          <div class="tip-box">💡 모로코풍 아랍 전통 실크 시장 골목. 화려한 가죽 제품, 아라베스크 조명 램프, 도자기 기념품 쇼핑.</div>
+        </div>
+      </div>
+
+      <!-- Food: El Huerto de Juan Ranas -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">저녁 (19:30 확정 예약 / 알함브라 뷰 디너)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/MD6ZJypEZ345oK9o9" target="_blank">
+              엘 후에르토 드 후안 라나스 (El Huerto de Juan Ranas) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">854m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">[필수 주류] 수제 프리미엄 샹그리아 (Sangría Especial):</span> 1L 피처 (€22~€26)</li>
+            <li><span class="menu-highlight">이베리코 프레사 숯불구이 (Presa Ibérica):</span> (€26~€29)</li>
+            <li><span class="menu-highlight">구운 지중해 농어 스테이크 (Lubina a la Espalda):</span> (€26~€30)</li>
+            <li><span class="menu-highlight">마늘 올리브오일 새우 까수엘라 (Gambas al Ajillo):</span> (€18~€22)</li>
+          </ul>
+          <div class="tip-box">
+            • <strong>예약 확정:</strong> 19:30 입장 (알함브라 궁전 정면 뷰 난간석)<br>
+            • 💡 석양 노을부터 어두워진 뒤 궁전에 조명이 켜지는 황금빛 야경까지 식사와 함께 감상.
+          </div>
+        </div>
+      </div>
+
+      <!-- Spot: 산 니콜라스 전망대 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">알바이신 최고 야경 뷰</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Mirador+de+San+Nicol%C3%A1s,+Plaza+Mirador+de+San+Nicol%C3%A1s,+Granada" target="_blank">
+              산 니콜라스 전망대 (Mirador de San Nicolás) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">식당 바로 옆 46m</span>
+          </div>
+          <div class="tip-box">💡 버스킹 기타 연주가 흐르는 전망대 광장에서 알함브라 궁전 야경의 피날레를 즐기고 숙소(614m) 복귀.</div>
+        </div>
+      </div>
+
+      <!-- Hotel Return -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">숙소 복귀</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Hotel+Inglaterra,+Calle+Cetti+Meriem+4,+Granada" target="_blank">
+              호텔 잉글라테라 (Hotel Inglaterra) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">614m 도보 복귀</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backup List -->
+    <div class="slide">
+      <div class="day-header">
+        <div class="day-title">🚨 안달루시아(세비야·그라나다) 비상 백업</div>
+        <div class="day-city">웨이팅 / 휴무 대체</div>
+      </div>
+      <table class="backup-table">
+        <thead>
+          <tr>
+            <th>원래 식당</th>
+            <th>대체 추천 식당 (클릭 시 구글맵)</th>
+            <th>위치 & 추천 메뉴</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>보데가 산타 크루즈</strong> (D8 점심)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=Bar+Las+Teresas,+Sevilla" target="_blank"><strong>Bar Las Teresas 📍</strong></a></td>
+            <td>산타 크루즈 골목 안, 1870년 개업 정통 하몽 & 몬타디토 노포</td>
+          </tr>
+          <tr>
+            <td><strong>라 브루닐다</strong> (D8 저녁)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=Restaurante+Eslava,+Sevilla" target="_blank"><strong>Restaurante Eslava 📍</strong></a></td>
+            <td>타파스 대회 다수 수상 노포 (꿀 갈비구이, 반숙란 버섯 샬롯)</td>
+          </tr>
+          <tr>
+            <td><strong>라 바르톨라</strong> (D9 점심)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=Ovejas+Negras+Tapas,+Sevilla" target="_blank"><strong>Ovejas Negras Tapas 📍</strong></a></td>
+            <td>살바도르 광장 인근, 감각적인 모던 퓨전 타파스 바</td>
+          </tr>
+          <tr>
+            <td><strong>El Pasaje</strong> (D9 저녁)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=Perro+Viejo+Tapas+Bar,+Sevilla" target="_blank"><strong>Perro Viejo Tapas Bar 📍</strong></a></td>
+            <td>메트로폴 파라솔 도보 2분, 숯불 요리 타파스 전문점</td>
+          </tr>
+          <tr>
+            <td><strong>로스 디아만테스</strong> (D10 저녁)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=Bodegas+Casta%C3%B1eda,+Granada" target="_blank"><strong>Bodegas Castañeda 📍</strong></a></td>
+            <td>누에바 광장 맞은편, 대형 오크통 인테리어의 1927년 전통 보데가</td>
+          </tr>
+          <tr>
+            <td><strong>로스 마누엘레스</strong> (D11 점심)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=Taberna+La+Tana,+Granada" target="_blank"><strong>Taberna La Tana 📍</strong></a></td>
+            <td>대성당 인근, 최고급 하몽과 와인 페어링 전문 타베르나</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Bottom Navigation Buttons -->
+  <div class="controls">
+    <button class="ctrl-btn" id="prevBtn" onclick="moveSlide(-1)" disabled>◀ 이전 일차</button>
+    <button class="ctrl-btn" id="nextBtn" onclick="moveSlide(1)">다음 일차 ▶</button>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const tabs = document.querySelectorAll('.tab-btn');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function updateUI() {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('active', idx === currentSlide);
+    });
+    tabs.forEach((tab, idx) => {
+      tab.classList.toggle('active', idx === currentSlide);
+    });
+
+    prevBtn.disabled = (currentSlide === 0);
+    nextBtn.disabled = (currentSlide === slides.length - 1);
+  }
+
+  function setSlide(index) {
+    currentSlide = index;
+    updateUI();
+  }
+
+  function moveSlide(direction) {
+    currentSlide += direction;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+    updateUI();
+  }
+</script>
+
+</body>
+</html>

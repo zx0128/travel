@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>🇵🇹 포르투갈(리스본 & 포르투) 완벽 여행 & 미식 가이드</title>
+  <style>
+    :root {
+      --primary: #0f4c81;
+      --primary-dark: #0b375e;
+      --accent: #d97706;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --highlight: #fef3c7;
+      --badge-transit: #2563eb;
+      --badge-hotel: #475569;
+      --badge-spot: #059669;
+      --badge-food: #dc2626;
+      --badge-cafe: #db2777;
+      --badge-shop: #7c3aed;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 840px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 22px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      color: #bfdbfe;
+      margin-top: 4px;
+    }
+
+    .home-nav {
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      transition: background 0.2s;
+    }
+
+    .home-nav:hover {
+      background: rgba(0, 0, 0, 0.35);
+      color: #ffffff;
+    }
+
+    .nav-tabs {
+      display: flex;
+      background: var(--primary-dark);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 80px;
+      padding: 12px 6px;
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      color: #ffffff;
+      background: var(--primary);
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .slider-container {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .slide {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .day-header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .day-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .day-city {
+      font-size: 0.88rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Timeline step item */
+    .step-item {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 16px;
+    }
+
+    .step-item::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 24px;
+      bottom: -18px;
+      width: 2px;
+      background: #cbd5e1;
+    }
+
+    .step-item:last-child::before {
+      display: none;
+    }
+
+    .step-dot {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid var(--primary);
+    }
+
+    .item-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .card-transit { border-left: 4px solid var(--badge-transit); background: #f8faff; }
+    .card-hotel { border-left: 4px solid var(--badge-hotel); background: #f8fafc; }
+    .card-spot { border-left: 4px solid var(--badge-spot); }
+    .card-food { border-left: 4px solid var(--badge-food); }
+    .card-cafe { border-left: 4px solid var(--badge-cafe); }
+    .card-shop { border-left: 4px solid var(--badge-shop); }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .badge-transit { background: var(--badge-transit); }
+    .badge-hotel { background: var(--badge-hotel); }
+    .badge-spot { background: var(--badge-spot); }
+    .badge-food { background: var(--badge-food); }
+    .badge-cafe { background: var(--badge-cafe); }
+    .badge-shop { background: var(--badge-shop); }
+
+    .place-name {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .place-link {
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s;
+    }
+
+    .place-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .map-icon {
+      font-size: 0.85rem;
+    }
+
+    .dist-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #64748b;
+      background: #e2e8f0;
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+
+    .price-badge {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #b45309;
+      background: var(--highlight);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .menu-list {
+      list-style: none;
+      font-size: 0.86rem;
+      line-height: 1.55;
+      margin-top: 6px;
+    }
+
+    .menu-list li {
+      margin-bottom: 4px;
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .menu-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .menu-highlight {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .tip-box {
+      margin-top: 8px;
+      padding: 8px 12px;
+      background: #f1f5f9;
+      border-left: 3px solid var(--primary);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-radius: 0 6px 6px 0;
+      line-height: 1.45;
+    }
+
+    .tip-warning {
+      background: #fef3c7;
+      border-left-color: #d97706;
+      color: #92400e;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+    }
+
+    .ctrl-btn {
+      padding: 10px 20px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .ctrl-btn:disabled {
+      background: #cbd5e1;
+      cursor: not-allowed;
+    }
+
+    .ctrl-btn:hover:not(:disabled) {
+      opacity: 0.9;
+    }
+
+    .backup-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    .backup-table th, .backup-table td {
+      padding: 10px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .backup-table th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <a href="index.html" class="home-nav">🏠 전체 일정 목록 (Home)</a>
+    <h1>🇵🇹 포르투갈(리스본 & 포르투) 전체 일정 & 미식 가이드</h1>
+    <p>트리플 전체 장소 100% 독립 분할 · 포르투갈 정식 명칭 구글맵 정밀 검증 완료</p>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="setSlide(0)">Day 1</button>
+    <button class="tab-btn" onclick="setSlide(1)">Day 2</button>
+    <button class="tab-btn" onclick="setSlide(2)">Day 3</button>
+    <button class="tab-btn" onclick="setSlide(3)">Day 4</button>
+    <button class="tab-btn" onclick="setSlide(4)">Day 5</button>
+    <button class="tab-btn" onclick="setSlide(5)">Day 6</button>
+    <button class="tab-btn" onclick="setSlide(6)">Day 7</button>
+    <button class="tab-btn" onclick="setSlide(7)">🚨 백업 식당</button>
+  </div>
+
+  <!-- Slides Container -->
+  <div class="slider-container">
+
+    <!-- Day 1 -->
+    <div class="slide active">
+      <div class="day-header">
+        <div class="day-title">Day 1 (9/11 목)</div>
+        <div class="day-city">인천 출국 ➔ 리스본 도착 & 심야 만찬</div>
+      </div>
+
+      <!-- Flight -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-transit">
+          <span class="badge badge-transit">항공 이동 ✈️</span>
+          <div class="place-name">
+            <span>대한항공 KE921 (ICN ➔ LIS)</span>
+            <span class="price-badge">12:45 출발 ➔ 20:15 도착</span>
+          </div>
+          <div class="tip-box">
+            • <strong>출발/도착:</strong> 인천국제공항(ICN) 12:45 출발 ➔ 리스본 포르텔라 국제공항(LIS) 20:15 도착<br>
+            • <strong>수하물:</strong> 25KG 위탁 수하물 규정 확인
+          </div>
+        </div>
+      </div>
+
+      <!-- Airport -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">공항 & 교통권</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Aeroporto+de+Lisboa" target="_blank">
+              리스본 포르텔라 국제공항 (Aeroporto de Lisboa) <span class="map-icon">📍</span>
+            </a>
+          </div>
+          <div class="tip-box">
+            💡 <strong>Ask Me Lisboa Desk (공항 인포데스크):</strong> 21:30 마감 전 리스보아 카드 수령 (미수령 시 다음 날 코메르시우 광장 Tourist Office에서 수령 가능).
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">숙소 체크인</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Grande+Pensão+Residencial+Alcobia,+Lisboa" target="_blank">
+              그란데 펜사오 알코비아 (Grande Pensão Residencial Alcobia) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">공항에서 7.2km</span>
+          </div>
+          <div class="tip-box">💡 피게이라/호시우 광장 인근 숙소. 짐 풀고 피노키오로 바로 이동(도보 4분).</div>
+        </div>
+      </div>
+
+      <!-- Dinner -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">야식 / 저녁 (심야 만찬)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Restaurante+Cervejaria+Pinóquio,+Lisboa" target="_blank">
+              레스토란테 세베자리아 피노키오 (Pinóquio) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">숙소에서 405m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">포르투갈식 바지락 술찜 (Amêijoas à Bulhão Pato):</span> 올리브오일, 마늘, 고수 국물 (€18~€22)</li>
+            <li><span class="menu-highlight">마늘 버터 새우구이 (Gambas ao Alho):</span> 탱글한 대서양 새우 구이 (€16~€20)</li>
+            <li><span class="menu-highlight">생맥주(Super Bock) / 비뉴 베르드(그린와인):</span> 비행 피로 푸는 첫 알코올</li>
+          </ul>
+          <div class="tip-box">💡 24:00까지 정상 영업. 늦은 도착 후 첫 끼로 최고입니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="slide">
+      <div class="day-header">
+        <div class="day-title">Day 2 (9/12 토)</div>
+        <div class="day-city">벨렘 지구 ➔ 바이샤 & 알파마 미식 대장정</div>
+      </div>
+
+      <!-- Spot: 제로니모스 수도원 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">관광명소</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Mosteiro+dos+Jerónimos,+Lisboa" target="_blank">
+              제로니모스 수도원 (Mosteiro dos Jerónimos) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">숙소에서 6.3km</span>
+          </div>
+          <div class="tip-box tip-warning">⚠️ <strong>입장 시간 사전 예약 필수!</strong> 대기줄이 매우 기므로 아침 일찍 도착 권장.</div>
+        </div>
+      </div>
+
+      <!-- Food: 핫도그 카초로 루시타노 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">아침 조식</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Cachorro+Lusitano,+Lisboa" target="_blank">
+              핫도그 카초로 루시타노 (Cachorro Lusitano) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">수도원에서 229m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">스페셜 핫도그 (Cachorro Especial):</span> 육즙 가득 소시지와 바삭한 토핑 (€4~€6)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cafe: 파스테이스 드 벨렘 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-cafe">
+          <span class="badge badge-cafe">디저트 / 에그타르트 원조</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Pastéis+de+Belém,+Lisboa" target="_blank">
+              파스테이스 드 벨렘 (Pastéis de Belém) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">193m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">원조 파스텔 데 나타 (개당 €1.40):</span> 시나몬과 슈가파우더 듬뿍</li>
+          </ul>
+          <div class="tip-box">💡 홀 대기줄 대신 '테이크아웃 전용 카운터'로 진입하면 빠르게 구매 가능!</div>
+        </div>
+      </div>
+
+      <!-- Spot: 벨렘 탑 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">관광명소</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Torre+de+Belém,+Lisboa" target="_blank">
+              벨렘 탑 (Torre de Belém) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">1.3km</span>
+          </div>
+          <div class="tip-box">💡 벨렘탑 걸어가는 해변 산책로에 노점 '피냐콜라다(파인애플 통)' 보이면 한잔 마시기! 🍍</div>
+        </div>
+      </div>
+
+      <!-- Spot: 아센소르 다 비카 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">인생샷 포토존</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Ascensor+da+Bica,+Lisboa" target="_blank">
+              아센소르 다 비카 (Ascensor da Bica) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">6.3km (트램/우버 이동)</span>
+          </div>
+          <div class="tip-box">💡 가파른 골목길 사이로 노란색 트램이 지나가는 리스본 최고의 대표 사진 스팟.</div>
+        </div>
+      </div>
+
+      <!-- Food: As Bifanas do Afonso -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">점심 (로컬 버거)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=As+Bifanas+do+Afonso,+Lisboa" target="_blank">
+              아스 비파냐스 두 아폰수 (As Bifanas do Afonso) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">1km</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">정통 비파냐 (Bifana, €3.00~€3.50):</span> 매콤짭짤 육즙 가득 돼지고기 바게트 (겨자 소스 듬뿍)</li>
+            <li><span class="menu-highlight">임페리얼 생맥주 (Imperial, €1.50):</span> 길거리 스탠딩 맥주 페어링</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Spot: Praça do Comércio -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">광장 & 랜드마크</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/3AU5hiqfztZcFd3Y8" target="_blank">
+              코메르시우 광장 (Praça do Comércio) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">바이샤 지구 중심</span>
+          </div>
+          <div class="tip-box">💡 아우구스타 개선문과 테주 강(Cais das Colunas)이 시원하게 펼쳐지는 리스본 최고의 대표 광장.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 아우구스타 개선문 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">역사적 건축 & 거리</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Arco+da+Rua+Augusta,+Lisboa" target="_blank">
+              아우구스타 개선문 (Arco da Rua Augusta) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">113m</span>
+          </div>
+          <div class="tip-box">💡 코메르시우 광장에서 아우구스타 보행자 거리로 이어지는 관문이자 전망대.</div>
+        </div>
+      </div>
+
+      <!-- Snack: Casa Portuguesa -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">간식</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Casa+Portuguesa+do+Pastel+de+Bacalhau,+Rua+Augusta,+Lisboa" target="_blank">
+              카사 포르투게사 두 파스텔 드 바칼라우 <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">208m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">세라 다 에스트렐라 치즈 대구 크로켓 + 포트와인 세트 (€5.50)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Spot: 리스본 대성당 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">알파마 랜드마크</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Sé+de+Lisboa" target="_blank">
+              리스본 대성당 (Sé de Lisboa) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">393m</span>
+          </div>
+          <div class="tip-box">💡 노란색 28번 트램이 성당 앞을 통과하는 순간을 담는 대표 포토 스팟.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 상 조르제 성 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">알파마 최고 전망</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Castelo+de+São+Jorge,+Lisboa" target="_blank">
+              상 조르제 성 (Castelo de São Jorge) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">455m</span>
+          </div>
+          <div class="tip-box">💡 리스본에서 가장 높은 언덕에 위치해 시내 전경과 타구스강을 360도로 감상할 수 있는 고성.</div>
+        </div>
+      </div>
+
+      <!-- Cafe: 카페 다 가라젱 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-cafe">
+          <span class="badge badge-cafe">뷰 카페 휴식</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Café+da+Garagem,+Lisboa" target="_blank">
+              카페 다 가라젱 (Café da Garagem) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">115m</span>
+          </div>
+          <div class="tip-box">💡 극장 지하 통유리로 알파마의 주황색 지붕들이 내려다보이는 숨은 뷰 명소. 커피/음료 한잔.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 포르타스 두 솔 전망대 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">알파마 전망대 1</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Miradouro+das+Portas+do+Sol,+Lisboa" target="_blank">
+              포르타스 두 솔 전망대 (Miradouro das Portas do Sol) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">408m</span>
+          </div>
+          <div class="tip-box">💡 타구스강과 알파마의 주황빛 지붕 전경이 시원하게 펼쳐지는 필수 뷰포인트.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 산타 루치아 전망대 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">알파마 전망대 2</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Miradouro+de+Santa+Luzia,+Lisboa" target="_blank">
+              산타 루치아 전망대 (Miradouro de Santa Luzia) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">47m</span>
+          </div>
+          <div class="tip-box">💡 푸른 아줄레주 타일 벽화와 부겐빌레아 꽃덩굴이 어우러진 인생샷 명소.</div>
+        </div>
+      </div>
+
+      <!-- Dinner: 우마 (Restaurante UMA) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">저녁 (20:00 예약 권장 / 해물밥)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Restaurante+UMA,+Rua+dos+Sapateiros+177,+Lisboa" target="_blank">
+              우마 (Restaurante UMA) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">731m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">단일 메뉴 해물밥 (Arroz de Marisco, 2인):</span> 꽃게, 새우, 홍합이 우러난 얼큰하고 뜨끈한 해물탕밥 (€35~€45)</li>
+            <li><span class="menu-highlight">하우스 그린와인(Vinho Verde):</span> 해물 국물과 환상의 페어링</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bar: 아 진지냐 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-cafe">
+          <span class="badge badge-cafe">전통 주류</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=A+Ginjinha,+Largo+São+Domingos+8,+Lisboa" target="_blank">
+              아 진지냐 (A Ginjinha) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">297m</span>
+          </div>
+          <div class="tip-box">💡 초콜릿 잔에 마시는 전통 체리 리큐르(잔당 €1.50). 마시고 숙소(233m)로 편하게 복귀.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="slide">
+      <div class="day-header">
+        <div class="day-title">Day 3 (9/13 일)</div>
+        <div class="day-city">신트라 투어 후 타임아웃 마켓 만찬</div>
+      </div>
+
+      <!-- Spot: 헤스타우라도레스 광장 (미팅) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">투어 집결</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Praça+dos+Restauradores,+Lisboa" target="_blank">
+              헤스타우라도레스 광장 (Praça dos Restauradores) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">숙소에서 491m</span>
+          </div>
+          <div class="tip-box">💡 신트라 근교 일일투어 집결지. 가이드 미팅 및 투어 전용 차량 탑승.</div>
+        </div>
+      </div>
+
+      <!-- Tour Card: 신트라 근교 투어 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot" style="border-left: 4px solid #059669; background: #f0fdf4;">
+          <span class="badge badge-spot" style="background:#059669;">일일 근교 투어 🏰</span>
+          <div class="place-name">
+            <span>신트라 & 호카곶 투어 코스 (신트라 ➔ 페냐 ➔ 헤갈레이라 ➔ 호카곶)</span>
+          </div>
+          <div class="tip-box" style="background:#ffffff;">
+            • <strong>투어 주요 방문지:</strong><br>
+              1. <a class="place-link" href="https://maps.google.com/?q=Sintra,+Portugal" target="_blank">신트라 구시가지 (Sintra) 📍</a><br>
+              2. <a class="place-link" href="https://maps.google.com/?q=Palácio+Nacional+da+Pena,+Sintra" target="_blank">페냐 궁전 (Palácio Nacional da Pena) 📍</a><br>
+              3. <a class="place-link" href="https://maps.google.com/?q=Quinta+da+Regaleira,+Sintra" target="_blank">헤갈레이라 별장 (Quinta da Regaleira) 📍</a><br>
+              4. <a class="place-link" href="https://maps.google.com/?q=Cabo+da+Roca" target="_blank">호카곶 (Cabo da Roca - 유라시아 대륙 서쪽 끝) 📍</a><br>
+            • 💡 투어 종료 후 저녁 무렵 헤스타우라도레스 광장으로 복귀 ➔ 타임아웃 마켓으로 이동.
+          </div>
+        </div>
+      </div>
+
+      <!-- Spot: 헤스타우라도레스 광장 (하차) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">투어 복귀 / 하차</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Praça+dos+Restauradores,+Lisboa" target="_blank">
+              헤스타우라도레스 광장 (복귀) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">0m (투어 종료)</span>
+          </div>
+          <div class="tip-box">💡 투어 차량 하차 후 카이스 두 소드레 방면 타임아웃 마켓(1km)으로 저녁 식사 이동.</div>
+        </div>
+      </div>
+
+      <!-- Dinner: 타임 아웃 마켓 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">저녁 다이닝 마켓</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Time+Out+Market+Lisboa" target="_blank">
+              타임 아웃 마켓 (Time Out Market Lisboa) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">1km</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">Marlou:</span> 신선한 대서양 생굴 4pcs (€10~€12) + 문어 샐러드 (€12)</li>
+            <li><span class="menu-highlight">Henrique Sá Pessoa:</span> 24시간 수비드 삼겹살 구이 (€16~€18)</li>
+            <li><span class="menu-highlight">Alexandre Silva:</span> 트러플 퓨레 립아이 스테이크 (€18~€22)</li>
+            <li><span class="menu-highlight">Manteigaria:</span> 따뜻한 겉바속촉 에그타르트 & 토니 포트와인</li>
+          </ul>
+          <div class="tip-box">💡 음식은 각 부스에서 개별 결제, 와인과 맥주는 홀 중앙 바에서 주문하는 시스템.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 핑크 거리 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">야간 포토존</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Rua+Cor+de+Rosa,+Lisboa" target="_blank">
+              핑크스트리트 (Rua Cor de Rosa) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">타임아웃 마켓에서 185m</span>
+          </div>
+          <div class="tip-box">
+            • <strong>구글맵 공식 POI:</strong> Rua Cor de Rosa (핑크스트리트 정식 명칭)<br>
+            • 💡 타임아웃 마켓 바로 인접 골목. 바닥이 분홍색으로 칠해진 리스본의 대표적인 사진 & 펍 명소.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="slide">
+      <div class="day-header">
+        <div class="day-title">Day 4 (9/14 월)</div>
+        <div class="day-city">리스본 ➔ 포르투 기차 이동 & 구시가지 투어</div>
+      </div>
+
+      <!-- Train Transit -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-transit">
+          <span class="badge badge-transit">기차 이동 🚂</span>
+          <div class="place-name">
+            <span>CP 열차 (리스본 오리엔트 ➔ 포르투 캄파냥)</span>
+            <span class="price-badge">12:09 출발 ➔ 14:48 도착</span>
+          </div>
+          <div class="tip-box">
+            • <strong>출발:</strong> <a class="place-link" href="https://maps.app.goo.gl/4a3KRrhsxch8Y7iN8" target="_blank">리스본 오리엔트역(Estação do Oriente) 📍</a> 12:09<br>
+            • <strong>도착:</strong> <a class="place-link" href="https://maps.google.com/?q=Estação+de+Campanhã,+Porto" target="_blank">포르투 캄파냥역(Estação de Campanhã) 📍</a> 14:48 (2시간 39분 소요)
+          </div>
+        </div>
+      </div>
+
+      <!-- Porto Hotel -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-hotel">
+          <span class="badge badge-hotel">포르투 숙소 체크인</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Rua+da+Corticeira+46,+Porto" target="_blank">
+              R. da Corticeira 46 숙소 <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">캄파냥역에서 1.7km</span>
+          </div>
+          <div class="tip-box">💡 히베이라/상벤투 인근 숙소. 체크인 후 가볍게 상벤투역으로 출발.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 상 벤투 역 (São Bento) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">아줄레주 명소</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/pDYmCXPMPDahcate9" target="_blank">
+              상 벤투 기차역 (Estação São Bento) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">708m</span>
+          </div>
+          <div class="tip-box">💡 <strong>구글맵 정식 POI:</strong> Estação São Bento. 2만여 장의 푸른 타일로 포르투갈 역사를 기록한 세계에서 가장 아름다운 기차역 로비.</div>
+        </div>
+      </div>
+
+      <!-- Food: 맥도날드 임페리얼 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">늦은 점심</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=McDonald%27s+Imperial,+Porto" target="_blank">
+              맥도날드 임페리얼 점 (McDonald's Imperial) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">115m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">맥메뉴 세트 & 포르투갈 전통 수프(Sopa):</span> 1930년대 아르데코 스테인드글라스 감상하며 간단 식사</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Spot: 포르투 시청 (Letras Porto) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">광장 & 포토존</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Letras+Porto" target="_blank">
+              포르투 시청 & PORTO 조형물 (Letras Porto) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">359m</span>
+          </div>
+          <div class="tip-box">💡 알리아두스 광장 끝 시청 앞 파란색 'PORTO' 대형 글자 조형물 필수 인증샷.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 클레리구스 성당 / 탑 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">구시가지 랜드마크 1</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/FrBPvBLxEBmvPgZS9" target="_blank">
+              클레리구스 성당 / 탑 (Torre dos Clérigos) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">518m</span>
+          </div>
+          <div class="tip-box">💡 75m 높이의 바로크 양식 종탑으로 포르투 시내 어디서나 보이는 상징적인 랜드마크.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 렐루 서점 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">구시가지 랜드마크 2</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Livraria+Lello,+Porto" target="_blank">
+              렐루 서점 (Livraria Lello) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">133m</span>
+          </div>
+          <div class="tip-box">💡 해리포터 모티브가 된 붉은 곡선 계단과 네오고딕 목조 인테리어가 환상적인 세계적인 서점.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 카르모 성당 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">구시가지 랜드마크 3</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Igreja+do+Carmo,+Porto" target="_blank">
+              카르모 성당 & 사자 분수대 (Igreja do Carmo) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">135m</span>
+          </div>
+          <div class="tip-box">💡 성당 측면 외벽 전체를 뒤덮은 거대한 푸른 아줄레주 타일 벽화와 앞마당 사자 분수대.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 빅토리아 전망대 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">구시가지 뷰</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Miradouro+da+Vitória,+Porto" target="_blank">
+              빅토리아 전망대 (Miradouro da Vitória) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">477m</span>
+          </div>
+          <div class="tip-box">💡 포르투 지붕과 도우루강이 한눈에 보이는 빈티지 전망대 (사유지 공사로 닫혔으면 패스 가능).</div>
+        </div>
+      </div>
+
+      <!-- Dinner: 칸티나 32 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">저녁 (월요일 정상 영업)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Cantina+32,+Rua+das+Flores+32,+Porto" target="_blank">
+              칸티나 32 (Cantina 32) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">145m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">구운 통오징어 & 고구마 퓨레 (Lula Grelhada, €17~€19):</span> 불향 가득 시그니처</li>
+            <li><span class="menu-highlight">타이거 새우 볶음 (€15~€17) / 흑돼지 볼살 스튜 (€18)</span></li>
+            <li><span class="menu-highlight">화분 바나나 치즈케이크:</span> 흙 모양의 시그니처 화분 디저트</li>
+          </ul>
+          <div class="tip-box">💡 플로레스 거리를 따라 내려오며 저녁을 먹고 숙소(925m)로 귀가.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="slide">
+      <div class="day-header">
+        <div class="day-title">Day 5 (9/15 화)</div>
+        <div class="day-city">가이아 와인투어 & 모루 정원 일몰 & 뽈뽀 만찬</div>
+      </div>
+
+      <!-- Cafe: 마이 커피 포르투 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-cafe">
+          <span class="badge badge-cafe">아침 브런치 (09:00 오픈런)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/hJLbVvnQRNGYuriS6" target="_blank">
+              마이 커피 포르투 (My Coffee Porto) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">586m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">아사이볼 (€8~€10) & 아보카도 토스트:</span> 절벽 테라스에서 동 루이스 다리를 보며 즐기는 브런치</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Spot: 동 루이스 1세 다리 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">포르투 상징</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Ponte+Luís+I,+Porto" target="_blank">
+              동 루이스 1세 다리 (Ponte Luís I) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">142m</span>
+          </div>
+          <div class="tip-box">💡 에펠의 제자가 설계한 2층 철교. 상층은 메트로와 보행자, 하층은 차량과 보행자가 통행합니다.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 히베이라 지구 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">강변 산책로</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Ribeira,+Porto,+Portugal" target="_blank">
+              히베이라 지구 (Ribeira) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">375m</span>
+          </div>
+          <div class="tip-box">💡 알록달록한 전통 가옥들과 도우루강이 맞닿은 광장. 노천 테라스에서 시원한 슈퍼복 맥주 한잔.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 와인투어 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">와이너리 투어 (14:00 예약)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Rua+do+Choupelo+250,+Vila+Nova+de+Gaia" target="_blank">
+              와인투어 (Rua do Choupelo 250 / 테일러 와이너리 부근) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">1.1km</span>
+          </div>
+          <div class="tip-box">💡 14:00 포트와인 셀러 투어 & 오크통 숙성 시음 체험.</div>
+        </div>
+      </div>
+
+      <!-- Food: 갈로 그리지오 피제리아 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">피자 포장</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Gallo+Grigio+Pizzeria,+Vila+Nova+de+Gaia" target="_blank">
+              갈로 그리지오 피제리아 (Gallo Grigio) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">579m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">화덕 피자 포장:</span> 트러플/프로슈토 피자 테이크아웃 (€12~€16)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Spot: 와인잔 & 맥주 구매 마트 (My Auchan) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-shop">
+          <span class="badge badge-shop">피크닉 보급</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=My+Auchan+Av.+da+Rep%C3%BAblica+313,+Vila+Nova+de+Gaia" target="_blank">
+              My Auchan (Av. da República 313) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">30m</span>
+          </div>
+          <div class="tip-box">💡 <strong>구글맵 정식 상호:</strong> My Auchan. 모루 정원 올라가기 전 시원한 슈퍼복 맥주, 미니 포트와인, 일회용 컵 구매.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 모루 정원 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">일몰 피크닉</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=%EB%AA%A8%EB%A3%A8+%EC%A0%95%EC%9B%90" target="_blank">
+              모루 정원 Jardim do Morro <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">195m</span>
+          </div>
+          <div class="tip-box">
+            • <strong>실제 도로명 주소:</strong> 4430-210 Vila Nova de Gaia, 포르투갈<br>
+            • 💡 포장해 온 피자와 맥주를 먹으며 버스킹 음악과 함께 포르투 최고의 황금빛 노을 감상.
+          </div>
+        </div>
+      </div>
+
+      <!-- Spot: 세라 두 필라르 수도원 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">최고 조망 명소</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Mosteiro+da+Serra+do+Pilar,+Vila+Nova+de+Gaia" target="_blank">
+              세라 두 필라르 수도원 (Mosteiro da Serra do Pilar) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">196m</span>
+          </div>
+          <div class="tip-box">💡 동 루이스 다리와 강 건너 히베이라 전경이 가장 입체적으로 내려다보이는 파노라마 전망대.</div>
+        </div>
+      </div>
+
+      <!-- Dinner: 아데가 상 니콜라우 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">저녁 (뽈뽀 필수 코스)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Adega+São+Nicolau,+Porto" target="_blank">
+              아데가 상 니콜라우 (Adega São Nicolau) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">661m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">정통 오븐 통문어 구이 (Polvo Assado à Lagareiro, €21.50):</span> 알감자와 지글지글 끓는 올리브유 (인생 문어)</li>
+            <li><span class="menu-highlight">냄비 문어밥(Arroz de Polvo) 또는 조개찜 (€18~€19)</span></li>
+            <li><span class="menu-highlight">차가운 비뉴 베르드(그린와인) 1병 (€14)</span></li>
+          </ul>
+          <div class="tip-box">💡 수도원에서 다리 건너 도보 10분, 식사 후 숙소(999m)까지 평지 도보 5분.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="slide">
+      <div class="day-header">
+        <div class="day-title">Day 6 (9/16 수)</div>
+        <div class="day-city">볼량 시장 ➔ 도우루강 테라스 ➔ 미쉐린 파인다이닝</div>
+      </div>
+
+      <!-- Spot: 볼량 시장 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">아침 조식 & 시장 투어</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Mercado+do+Bolhão,+Porto" target="_blank">
+              볼량 시장 (Mercado do Bolhão) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">숙소에서 786m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">신선한 과일 컵 & 하몽 컵 (€3~€5):</span> 멜론에 감싼 하몽과 착즙 주스</li>
+            <li><span class="menu-highlight">바칼라우 크로켓 & 나타</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Spot: 알마스 성당 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">아줄레주 명소</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Capela+das+Almas,+Porto" target="_blank">
+              알마스 성당 (Capela das Almas) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">188m</span>
+          </div>
+          <div class="tip-box">💡 산타 카타리나 쇼핑 거리에 위치하며, 건물 외벽 전체가 파란색 아줄레주 타일로 뒤덮인 아름다운 예배당.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 포르투 대성당 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">포르투 대성당</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Sé+do+Porto" target="_blank">
+              포르투 대성당 (Sé do Porto) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">906m</span>
+          </div>
+          <div class="tip-box">💡 요새처럼 웅장한 12세기 로마네스크 성당으로, 앞마당 테라스에서 포르투 구시가지와 도우루강이 시원하게 조망됩니다.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 도우루 강변 산책 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">도우루 강변 산책</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Ribeira,+Porto,+Portugal" target="_blank">
+              히베이라 강변 산책로 (Cais da Ribeira) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">82m</span>
+          </div>
+          <div class="tip-box">💡 대성당 계단을 따라 내려와 도우루강과 동 루이스 다리를 감상하며 테라스 방향으로 여유롭게 산책.</div>
+        </div>
+      </div>
+
+      <!-- Food: 무로 도 바칼라우 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">점심 (강변 뷰 테라스)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Muro+do+Bacalhau,+Porto" target="_blank">
+              무로 도 바칼라우 (Muro do Bacalhau) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">512m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">바칼라우 대구 스테이크 구이 (€18~€22)</span></li>
+            <li><span class="menu-highlight">오리고기 볶음밥 (Arroz de Pato) & 구운 갑오징어 (€16~€20)</span></li>
+          </ul>
+          <div class="tip-box">
+            • <strong>위치 & 주소:</strong> Muro dos Bacalhoeiros, Porto<br>
+            • 💡 성벽 테라스 좌석에 앉아 도우루강 물결을 바라보며 즐기는 여유로운 해산물 점심.
+          </div>
+        </div>
+      </div>
+
+      <!-- Spot: 동 엔히크 정원 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">광장 & 정원 산책</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Jardim+do+Infante+Dom+Henrique" target="_blank">
+              동 엔히크 정원 (Jardim do Infante Dom Henrique) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">식당 바로 앞</span>
+          </div>
+          <div class="tip-box">
+            • <strong>정확한 주소:</strong> R. do Infante D. Henrique, 4050-297 Porto<br>
+            • 💡 엔히크 항해왕 동상이 서 있는 잔디 정원. 볼사 궁전과 페레이라 보르헤스 시장(하드클럽)으로 이어지는 길목 쉼터.
+          </div>
+        </div>
+      </div>
+
+      <!-- Cafe: 베이스 포르투 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-cafe">
+          <span class="badge badge-cafe">잔디밭 카페 & 펍</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Base+Porto" target="_blank">
+              베이스 포르투 (Base Porto) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">668m</span>
+          </div>
+          <div class="tip-box">💡 클레리구스 탑 옆 올리브 나무가 심긴 인조잔디 옥상정원에서 시원한 칵테일/맥주 휴식.</div>
+        </div>
+      </div>
+
+      <!-- Shop: 정어리 통조림 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-shop">
+          <span class="badge badge-shop">기념품 쇼핑 1</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=O+Mundo+Fantástico+das+Sardinhas+Portuguesas,+Porto" target="_blank">
+              오 문도 판타스티코 다스 사르디냐 포르투게사 <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">180m</span>
+          </div>
+          <div class="tip-box">💡 놀이공원 컨셉 매장으로 자신의 출생 연도가 적힌 알록달록한 정어리 틴케이스 통조림 구매.</div>
+        </div>
+      </div>
+
+      <!-- Shop: 메이아 두지아 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-shop">
+          <span class="badge badge-shop">기념품 쇼핑 2</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Meia+Dúzia,+Rua+das+Flores,+Porto" target="_blank">
+              메이아 두지아 (Meia Dúzia - 물감잼) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">152m</span>
+          </div>
+          <div class="tip-box">💡 플로레스 거리에 위치. 물감 튜브 모양 패키지에 담긴 포르투갈 천연 과일잼 및 초콜릿 스프레드.</div>
+        </div>
+      </div>
+
+      <!-- Dinner: OMA (19:30 확정 예약) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">저녁 (19:30 확정 예약 / 미쉐린)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=OMA+Restaurante,+Porto" target="_blank">
+              OMA Restaurante <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">1.7km</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">Menu Viagem (9코스 파인다이닝 디너):</span> 1인 €87 (잿방어, 루비아 갈레가 스테이크, 푸아그라 등)</li>
+          </ul>
+          <div class="tip-box">💡 포르투 미식의 정점을 찍는 날! 여유롭고 프라이빗하게 식사.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 동 루이스 1세 다리 (야경) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">야경 산책 1</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Ponte+Luís+I,+Porto" target="_blank">
+              동 루이스 1세 다리 (야경) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">2.2km</span>
+          </div>
+          <div class="tip-box">💡 조명이 켜진 2층 철교 위를 걸으며 도우루강 양안의 로맨틱한 불빛 감상.</div>
+        </div>
+      </div>
+
+      <!-- Spot: 모루 정원 (야경) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-spot">
+          <span class="badge badge-spot">야경 산책 2</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=%EB%AA%A8%EB%A3%A8+%EC%A0%95%EC%9B%90" target="_blank">
+              모루 정원 Jardim do Morro (야경) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">313m</span>
+          </div>
+          <div class="tip-box">
+            • <strong>실제 도로명 주소:</strong> 4430-210 Vila Nova de Gaia, 포르투갈<br>
+            • 💡 언덕 위에서 반짝이는 포르투 구시가지 전경과 와인창고 불빛을 감상하는 최고의 야경 피날레.
+          </div>
+        </div>
+      </div>
+
+      <!-- Shop: 콘티넨트 마트 (모루정원 ➔ 숙소 귀가 최적 동선) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-shop">
+          <span class="badge badge-shop">귀가 장보기 (옵션 1)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/tKFEGXLcSnbWhkCg6" target="_blank">
+              콘티넨트 마트 (Continente Bom Dia Flores) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">모루정원에서 다리 건너 복귀길</span>
+          </div>
+          <div class="tip-box">
+            • <strong>정확한 주소:</strong> Largo São Domingos 116 / Rua das Flores, 4050-545 Porto (21:30까지 영업)<br>
+            • 💡 동 루이스 다리를 건너 숙소(R. da Corticeira)로 내려가는 플로레스 거리 초입에 있어 동선 낭비가 전혀 없는 최적 지점.
+          </div>
+        </div>
+      </div>
+
+      <!-- Shop: 핑고도스 마트 (모루정원 ➔ 숙소 귀가 최적 동선) -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-shop">
+          <span class="badge badge-shop">귀가 장보기 (옵션 2)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.app.goo.gl/d9AX77s12FiUW8jT9" target="_blank">
+              핑고도스 마트 (Pingo Doce São Bento) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">상벤투역 광장 바로 앞</span>
+          </div>
+          <div class="tip-box">
+            • <strong>정확한 주소:</strong> R. do Loureiro 22, 4000-329 Porto (21:00까지 영업)<br>
+            • 💡 상벤투역 바로 옆 골목에 위치하여 과일, 에그타르트, 와인, 생수를 숙소 들어가기 직전 구매하기 가장 편리한 대형 마트.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="slide">
+      <div class="day-header">
+        <div class="day-title">Day 7 (9/17 목)</div>
+        <div class="day-city">포르투 체크아웃 ➔ 리스본 귀환 ➔ 세비야 야간버스</div>
+      </div>
+
+      <!-- Food: 카페 산티아고 -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">점심 (포르투 소울푸드)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Café+Santiago,+Porto" target="_blank">
+              카페 산티아고 본점 (Café Santiago) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">체크아웃 후 479m</span>
+          </div>
+          <ul class="menu-list">
+            <li><span class="menu-highlight">프란세지냐 산티아고 (Francesinha com Ovo, €11~€13):</span> 스테이크, 소시지, 치즈가 녹아내린 샌드위치에 특제 맥주 소스 & 계란 프라이 (2인 1개+사이드도 든든)</li>
+            <li><span class="menu-highlight">시원한 슈퍼복 생맥주(Caneca) 페어링</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Campanhã Dinner Option -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">기차 타기 전 식사/포장 (18:40 탑승 전) 🚂</span>
+          <div class="place-name">
+            <span>캄파냥역 광장 앞 검증 명소 2곳</span>
+            <span class="price-badge">17:40 ~ 18:20 이용</span>
+          </div>
+          <div class="tip-box">
+            • <strong>🥇 빠른 식사:</strong> <a class="place-link" href="https://maps.google.com/?q=Churrasqueira+Campanhã,+Largo+da+Estação+de+Campanhã+51,+Porto" target="_blank"><strong>Churrasqueira Campanhã 📍</strong></a><br>
+            역 정문 광장 도보 40초(50m). 주문 후 5~10분 내 서빙되는 가성비 숯불구이/오늘의 특선 백반(€7.50~€9.00).<br><br>
+            • <strong>🥈 기차 안 피크닉 포장:</strong> <a class="place-link" href="https://maps.google.com/?q=Casa+do+Café+-+Campanhã,+Largo+da+Estação+de+Campanhã+45,+Porto" target="_blank"><strong>Casa do Café - Campanhã 📍</strong></a><br>
+            역 맞은편 도보 30초. 하몽/치즈 바게트 샌드위치(€3 내외)와 에그타르트, 음료 포장하여 달리는 기차 안에서 창밖 보며 식사!
+          </div>
+        </div>
+      </div>
+
+      <!-- Train: Campanhã to Oriente -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-transit">
+          <span class="badge badge-transit">기차 이동 🚂</span>
+          <div class="place-name">
+            <span>CP 열차 (포르투 캄파냥 ➔ 리스본 오리엔트)</span>
+            <span class="price-badge">18:40 출발 ➔ 21:22 도착</span>
+          </div>
+          <div class="tip-box">
+            • <strong>출발:</strong> <a class="place-link" href="https://maps.google.com/?q=Estação+de+Campanhã,+Porto" target="_blank">포르투 캄파냥 기차역(Estação de Campanhã) 📍</a> 18:40<br>
+            • <strong>도착:</strong> <a class="place-link" href="https://maps.app.goo.gl/4a3KRrhsxch8Y7iN8" target="_blank">리스본 오리엔트 기차역(Estação do Oriente) 📍</a> 21:22 (2시간 42분 소요)
+          </div>
+        </div>
+      </div>
+
+      <!-- Vasco da Gama Mall -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-food">
+          <span class="badge badge-food">리스본 도착 후 식사/대기 (21:22 ~ 22:15)</span>
+          <div class="place-name">
+            <a class="place-link" href="https://maps.google.com/?q=Centro+Vasco+da+Gama,+Lisboa" target="_blank">
+              바스쿠 다 가마 센터 (Centro Vasco da Gama) <span class="map-icon">📍</span>
+            </a>
+            <span class="dist-tag">역 바로 연결 207m</span>
+          </div>
+          <div class="tip-box tip-warning">
+            ⏰ <strong>푸드코트 & 마트 영업시간 확인:</strong><br>
+            • <strong>3층 푸드코트:</strong> <strong>매일 밤 23:00 / 24:00까지 정상 영업!</strong><br>
+            • <strong>지하 대형마트(Continente):</strong> 밤 23:00까지 영업 (물, 과일, 간식 구매 가능)<br>
+            • <strong>결론:</strong> 21:22에 도착해도 식사와 테이크아웃이 충분히 가능합니다!
+          </div>
+          <ul class="menu-list">
+            <li><a class="place-link" href="https://maps.google.com/?q=O+Forno+do+Leit%C3%A3o+do+Z%C3%A9+-+Vasco+da+Gama" target="_blank"><strong>O Forno do Leitão do Zé (바스쿠다가마점) 📍:</strong></a> 바삭한 아기돼지 바비큐 샌드위치 (€4.50~€6.00)</li>
+            <li><a class="place-link" href="https://maps.google.com/?q=Portug%C3%A1lia+Cervejaria+Vasco+da+Gama" target="_blank"><strong>Portugália Cervejaria (바스쿠다가마점) 📍:</strong></a> 정통 포르투갈 비프스테이크 & 생맥주 (€9.50~€14.00)</li>
+            <li><a class="place-link" href="https://maps.app.goo.gl/MXrRVQvQqznqr6Nr7" target="_blank"><strong>Poke House - Vasco da Gama 📍:</strong></a> 야간 이동 전 속 편한 신선한 생연어 포케 보울</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Night Bus Transit -->
+      <div class="step-item">
+        <div class="step-dot"></div>
+        <div class="item-card card-transit">
+          <span class="badge badge-transit">국경 이동 야간버스 🚌</span>
+          <div class="place-name">
+            <span>FLIXBUS (리스본 오리엔트 ➔ 세비야 플라사 데 아르마스)</span>
+            <span class="price-badge">22:25 탑승 ➔ 05:45(+1) 도착</span>
+          </div>
+          <div class="tip-box">
+            • <strong>탑승 장소:</strong> <a class="place-link" href="https://maps.app.goo.gl/rBw7SG49z9gckN9W7" target="_blank">리스본 오리엔트 버스터미널 (Terminal Rodoviário do Oriente) 📍</a><br>
+            • <strong>출발/도착:</strong> 22:25 출발 ➔ 스페인 세비야 플라사 데 아르마스(Plaza de Armas) 터미널 05:45 도착 (6시간 20분 소요)<br>
+            • 💡 오리엔트역 ➔ 바스쿠다가마 쇼핑몰 ➔ 버스터미널이 지하 및 지상 연결 통로로 연결되어 도보 3~5분 내 이동 가능.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backup List -->
+    <div class="slide">
+      <div class="day-header">
+        <div class="day-title">🚨 비상시 백업 식당 리스트</div>
+        <div class="day-city">웨이팅 / 휴무 대체</div>
+      </div>
+      <table class="backup-table">
+        <thead>
+          <tr>
+            <th>원래 식당</th>
+            <th>대체 추천 식당 (클릭 시 구글맵)</th>
+            <th>추천 메뉴 & 특징</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>피노키오</strong> (D1)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=Gambrinus,+Rua+das+Portas+de+Santo+Antão+23,+Lisboa" target="_blank"><strong>Gambrinus 📍</strong></a></td>
+            <td>호시우 광장 인근, 심야 해산물 및 조개찜 노포</td>
+          </tr>
+          <tr>
+            <td><strong>우마</strong> (D2)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=João+do+Grão,+Rua+dos+Correeiros+222,+Lisboa" target="_blank"><strong>João do Grão 📍</strong></a></td>
+            <td>우마 도보 2분, 푸짐한 전통 냄비 해물밥 & 대구 요리</td>
+          </tr>
+          <tr>
+            <td><strong>아폰수</strong> (D2)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=O+Trevo,+Praça+Luís+de+Camões+48,+Lisboa" target="_blank"><strong>O Trevo 📍</strong></a></td>
+            <td>카몽이스 광장 앞, 안소니 보뎅 극찬 비파냐 맛집</td>
+          </tr>
+          <tr>
+            <td><strong>칸티나 32</strong> (D4)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=Encaixados,+Rua+das+Flores+223,+Porto" target="_blank"><strong>Encaixados 📍</strong></a></td>
+            <td>플로레스 골목 바로 뒤, 웨이팅 적은 모던 비스트로</td>
+          </tr>
+          <tr>
+            <td><strong>상 니콜라우</strong> (D5)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=Taberninha+do+Manel,+Vila+Nova+de+Gaia" target="_blank"><strong>Taberninha do Manel 📍</strong></a></td>
+            <td>가이아 강변 테라스, 히베이라 야경 보며 먹는 숯불 문어</td>
+          </tr>
+          <tr>
+            <td><strong>무로 도 바칼라우</strong> (D6)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=Culto+ao+Bacalhau,+Mercado+do+Bolhão,+Porto" target="_blank"><strong>Culto ao Bacalhau 📍</strong></a></td>
+            <td>볼량시장 2층, 트러플 바칼라우 아 브라스 명소</td>
+          </tr>
+          <tr>
+            <td><strong>산티아고</strong> (D7)</td>
+            <td><a class="place-link" href="https://maps.google.com/?q=Lado+B+Café,+Rua+de+Passos+Manuel+190,+Porto" target="_blank"><strong>Lado B Café 📍</strong></a></td>
+            <td>산티아고 맞은편(도보 10초), 프란세지냐 양대 산맥</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Bottom Navigation Buttons -->
+  <div class="controls">
+    <button class="ctrl-btn" id="prevBtn" onclick="moveSlide(-1)" disabled>◀ 이전 일차</button>
+    <button class="ctrl-btn" id="nextBtn" onclick="moveSlide(1)">다음 일차 ▶</button>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const tabs = document.querySelectorAll('.tab-btn');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function updateUI() {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('active', idx === currentSlide);
+    });
+    tabs.forEach((tab, idx) => {
+      tab.classList.toggle('active', idx === currentSlide);
+    });
+
+    prevBtn.disabled = (currentSlide === 0);
+    nextBtn.disabled = (currentSlide === slides.length - 1);
+  }
+
+  function setSlide(index) {
+    currentSlide = index;
+    updateUI();
+  }
+
+  function moveSlide(direction) {
+    currentSlide += direction;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+    updateUI();
+  }
+</script>
+
+</body>
+</html>
