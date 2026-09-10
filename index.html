@@ -278,6 +278,92 @@
         font-size: 1.28rem;
       }
     }
+
+    .info-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #ffffff;
+      padding: 20px;
+      margin-top: 10px;
+    }
+    .info-card-header {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      min-width: 680px;
+    }
+    .custom-table th, .custom-table td {
+      padding: 11px 13px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      line-height: 1.5;
+    }
+    .custom-table th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .custom-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-table tr:hover {
+      background: #f8fafc;
+    }
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .strategy-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .strategy-city {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .strategy-desc {
+      font-size: 0.84rem;
+      color: #334155;
+      line-height: 1.55;
+    }
+    .tag-badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 4px;
+    }
+    .tag-blue { background: #dbeafe; color: #1e40af; }
+    .tag-red { background: #fee2e2; color: #991b1b; }
+    .tag-green { background: #dcfce7; color: #166534; }
+    .tag-amber { background: #fef3c7; color: #92400e; }
+
   </style>
 </head>
 <body>
@@ -376,6 +462,299 @@
         <div class="action-btn">바르셀로나 일정 보러 가기 ▶</div>
       </div>
     </a>
+
+
+    <!-- 1. 도시별 대중교통 카드 및 결제 전략 요약 -->
+    <div class="info-card">
+      <div class="info-card-header">💳 도시별 대중교통 카드 및 결제 전략 요약</div>
+      <div class="strategy-grid">
+        <div class="strategy-item">
+          <div class="strategy-city">🇵🇹 리스본 (Lisbon)</div>
+          <div class="strategy-desc">
+            <span class="tag-badge tag-blue">비바 비아젱 Zapping</span>
+            역 자동발권기에서 비바 비아젱(Viva Viagem) 카드 발급 후 금액을 충전하는 <strong>Zapping 방식</strong> 선택 (메트로·트램 15E·버스 모두 €1.61 할인가 적용, 트램 내 현금 승차 €3.10 대비 50% 절약).
+          </div>
+        </div>
+        <div class="strategy-item">
+          <div class="strategy-city">🇵🇹 포르투 (Porto)</div>
+          <div class="strategy-desc">
+            <span class="tag-badge tag-blue">안단테 카드 / CP 무료 환승</span>
+            발권기에서 안단테(Andante) 카드 구매 후 Zone 2 충전 사용. 리스본발 CP 고속열차 승차권 소지 시 <strong>캄파냥역 ➔ 상벤투역 로컬 열차 무료 환승</strong> 가능.
+          </div>
+        </div>
+        <div class="strategy-item">
+          <div class="strategy-city">🇪🇸 세비야 (Seville)</div>
+          <div class="strategy-desc">
+            <span class="tag-badge tag-red">컨택리스 카드 직접 태그</span>
+            교통카드 별도 발급 없이 시내버스 탑승 시 <strong>해외 컨택리스 신용카드(또는 애플페이)</strong>를 요금 단말기에 직접 태그 (1회 약 €1.40). 택시도 신용카드 결제 완비.
+          </div>
+        </div>
+        <div class="strategy-item">
+          <div class="strategy-city">🇪🇸 그라나다 (Granada)</div>
+          <div class="strategy-desc">
+            <span class="tag-badge tag-amber">알함브라 미니버스 소액 현금</span>
+            알함브라 급경사를 오르는 빨간색 미니버스(C30, C32)는 거스름돈이 빠르게 나오는 <strong>소액 현금(€1.40 기준, €5/€10권 또는 동전)</strong> 지불이 가장 빠르고 편리.
+          </div>
+        </div>
+        <div class="strategy-item" style="grid-column: 1 / -1;">
+          <div class="strategy-city">🇪🇸 바르셀로나 (Barcelona)</div>
+          <div class="strategy-desc">
+            <span class="tag-badge tag-red">T-Casual (1존 10회권)</span>
+            메트로역 발권기에서 10회권 교통카드인 <strong>T-Casual (1존, 약 €12.15)</strong> 구매. 시내버스·메트로 75분 내 환승 커버 가능.<br>
+            ⚠️ <strong>주의:</strong> 다인승 불가(1인 1매 사용 필수). 공항버스(Aerobús A1)는 T-Casual 적용 제외이므로 전용 티켓(편도 €7.25, 왕복 €12.50) 별도 결제.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 1.5km 이상 주요 이동 구간 & 교통편 안내 -->
+    <div class="info-card">
+      <div class="info-card-header">🚌 1.5km 이상 주요 이동 구간 & 권장 교통편 총정리</div>
+      <p style="font-size:0.83rem; color:var(--text-muted); margin-bottom:6px;">체력 소모를 방지하고 캐리어 이동을 최적화하기 위해 대중교통/차량 이용이 권장되는 핵심 구간입니다.</p>
+      <div class="table-responsive">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>도시 / 일자</th>
+              <th>이동 구간</th>
+              <th>거리 / 소요시간</th>
+              <th>추천 교통수단</th>
+              <th>교통비 지불 방법 & 팁</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>리스본 (Day 1)</strong></td>
+              <td>리스본 공항(LIS) ➔ 시내 숙소</td>
+              <td>약 7.5~8.5km / 25분</td>
+              <td><span class="tag-badge tag-blue">우버/볼트</span> (또는 메트로)</td>
+              <td>앱 자동 결제 (볼트가 우버보다 저렴하며 심야 캐리어 이동 시 최고).</td>
+            </tr>
+            <tr>
+              <td><strong>리스본 (Day 2)</strong></td>
+              <td>시내 중심 ➔ 벨렝 지구 (수도원)</td>
+              <td>약 6.3~6.5km / 25분</td>
+              <td><span class="tag-badge tag-blue">트램 15E</span> / 728번 버스</td>
+              <td>비바 비아젱(Viva Viagem) Zapping 충전 태그 (€1.61).</td>
+            </tr>
+            <tr>
+              <td><strong>리스본 (Day 2)</strong></td>
+              <td>벨렝 탑 ➔ 아센소르 다 비카 (시내)</td>
+              <td>약 6.3km / 25분</td>
+              <td><span class="tag-badge tag-blue">트램 15E</span> / 볼트</td>
+              <td>피게이라/소드레행 트램 탑승 (Zapping) 또는 다리 피로 시 볼트(약 €6~€8).</td>
+            </tr>
+            <tr>
+              <td><strong>리스본 (Day 3)</strong></td>
+              <td>리스본 ➔ 신트라 페나성 / 근교</td>
+              <td>약 30km / 45분</td>
+              <td>투어 전용 버스 (또는 CP기차+434)</td>
+              <td>투어 차량 탑승. (자유 이동 시 Rossio역 CP기차 Zapping + 434버스 컨택리스).</td>
+            </tr>
+            <tr>
+              <td><strong>리스본 ➔ 포르투 (Day 4)</strong></td>
+              <td>오리엔트역 ➔ 캄파냐(Campanhã)역</td>
+              <td>약 310km / 2시간 39분</td>
+              <td><span class="tag-badge tag-blue">CP 고속열차 (AP/IC)</span></td>
+              <td>사전 예매 모바일 티켓 QR코드 검표. 오리엔트역 에스컬레이터 완비.</td>
+            </tr>
+            <tr>
+              <td><strong>포르투 (Day 4)</strong></td>
+              <td>캄파냐역 ➔ 상벤투역 / 숙소</td>
+              <td>약 1.7~2.5km / 5~10분</td>
+              <td><span class="tag-badge tag-blue">CP 로컬 열차</span> / 택시</td>
+              <td>상벤투행 로컬 열차 무료 환승(고속열차 티켓 소지자) 또는 택시/볼트(약 €4~€6).</td>
+            </tr>
+            <tr>
+              <td><strong>포르투 (Day 6)</strong></td>
+              <td>플로레스 거리 ➔ OMA Restaurante</td>
+              <td>약 1.7km / 20분</td>
+              <td>도보 산책 / 버스 200번 / 볼트</td>
+              <td>여유 산책 또는 Cordoaria 승강장에서 버스/볼트(약 €3.50, 6분) 탑승.</td>
+            </tr>
+            <tr>
+              <td><strong>포르투 (Day 6)</strong></td>
+              <td>OMA Restaurante ➔ 동 루이스 다리</td>
+              <td>약 2.2km / 25분</td>
+              <td>내리막 도보 / 볼트</td>
+              <td>디너 후 도보 야경 산책 또는 볼트/우버(약 €4~€5, 7분)로 다리 입구 이동.</td>
+            </tr>
+            <tr>
+              <td><strong>포르투 ➔ 세비야 (Day 7)</strong></td>
+              <td>포르투 ➔ 리스본 ➔ 세비야</td>
+              <td>약 310km + 460km</td>
+              <td>CP 열차 + FLIXBUS 야간버스</td>
+              <td>사전 예매 모바일 티켓 QR 탑승 (오리엔트역 푸드코트 저녁 식사 후 연계).</td>
+            </tr>
+            <tr>
+              <td><strong>세비야 (Day 8)</strong></td>
+              <td>아르마스 터미널 ➔ 숙소(도냐 리나)</td>
+              <td>약 2.2km / 12분</td>
+              <td><span class="tag-badge tag-red">택시 승강장 택시</span> / 21번 버스</td>
+              <td>터미널 앞 승강장 택시(약 €7~€10, 카드 가능) 또는 시내버스 컨택리스 태그.</td>
+            </tr>
+            <tr>
+              <td><strong>세비야 (Day 9)</strong></td>
+              <td>트리아나 ➔ 메트로폴 파라솔</td>
+              <td>약 2.1km / 25분</td>
+              <td>도보 산책 / 40번 버스 / 택시</td>
+              <td>이사벨 2세 다리 건너 도보 산책 또는 버스(40번)/택시(약 €5~€7, 8분).</td>
+            </tr>
+            <tr>
+              <td><strong>세비야 ➔ 그라나다 (Day 10)</strong></td>
+              <td>세비야 ➔ 론다·네르하 ➔ 그라나다</td>
+              <td>약 213km / 종일</td>
+              <td>일일 샌딩 투어 버스 (또는 렌페)</td>
+              <td>투어 차량으로 그라나다 호텔 앞 직결 하차. (렌페 이동 시 2시간 30분 QR 스캔).</td>
+            </tr>
+            <tr>
+              <td><strong>그라나다 (Day 10)</strong></td>
+              <td>그라나다 역 ➔ 숙소(잉글라테라)</td>
+              <td>약 1.8km / 15분</td>
+              <td><span class="tag-badge tag-amber">택시</span> / 33번 버스</td>
+              <td>렌페 이용 시 역 앞 택시 승강장 이용 권장 (약 €6~€8, 카드 가능).</td>
+            </tr>
+            <tr>
+              <td><strong>그라나다 (Day 11)</strong></td>
+              <td>누에바 광장 ➔ 알함브라 매표소</td>
+              <td>약 1.6km (급경사) / 10분</td>
+              <td><span class="tag-badge tag-amber">빨간 미니버스 C30/C32</span></td>
+              <td>도보 시 심한 오르막! 미니버스 탑승 필수, 1인 €1.40 소액 현금 기사 지불.</td>
+            </tr>
+            <tr>
+              <td><strong>그라나다 (Day 12)</strong></td>
+              <td>숙소 ➔ 그라나다 공항(GRX)</td>
+              <td>약 16km / 20~25분</td>
+              <td><span class="tag-badge tag-amber">택시 (추천)</span></td>
+              <td>숙소 프런트 콜 또는 큰길 탑승 (약 €25~€30, 카드 가능).</td>
+            </tr>
+            <tr>
+              <td><strong>바르셀로나 (Day 12)</strong></td>
+              <td>공항(BCN T1) ➔ 카탈루냐 광장</td>
+              <td>약 13km / 35분</td>
+              <td><span class="tag-badge tag-red">공항버스 Aerobús A1</span></td>
+              <td>터미널 지하 승강장 키오스크 또는 기사에게 컨택리스 카드 결제 (€7.25).</td>
+            </tr>
+            <tr>
+              <td><strong>바르셀로나 (Day 13)</strong></td>
+              <td>사그라다 파밀리아 ➔ 레이알 광장</td>
+              <td>약 1.9km / 18분</td>
+              <td>메트로 L2+L3 / 택시</td>
+              <td>L2 Sagrada Família ➔ Passeig de Gràcia 환승 L3 Liceu (T-Casual 사용).</td>
+            </tr>
+            <tr>
+              <td><strong>바르셀로나 (Day 13)</strong></td>
+              <td>레이알 광장 ➔ 카르날 스테이크</td>
+              <td>약 2.0km / 10분</td>
+              <td><span class="tag-badge tag-red">메트로 L3</span> / 택시</td>
+              <td>Liceu역 ➔ Diagonal역 하차 도보 5분 (T-Casual) 또는 택시 (약 €7~€9).</td>
+            </tr>
+            <tr>
+              <td><strong>바르셀로나 (Day 14)</strong></td>
+              <td>시우타데야 공원 ➔ 살 마르 (해변)</td>
+              <td>약 1.8km / 15분</td>
+              <td>도보 산책 / 버스 V21·V27</td>
+              <td>포트 벨 경유 해변 도보 산책 권장, 다리 피로 시 버스 탑승 (T-Casual).</td>
+            </tr>
+            <tr>
+              <td><strong>바르셀로나 (Day 14)</strong></td>
+              <td>바르셀로네타 해변 ➔ 바 카녜테</td>
+              <td>약 2.1km / 12분</td>
+              <td>도보 산책 / 버스 D20 / 택시</td>
+              <td>콜럼버스 탑 방향 산책 또는 버스 D20/59번 탑승 (22:30 심야 워크인 공략).</td>
+            </tr>
+            <tr>
+              <td><strong>바르셀로나 (Day 15)</strong></td>
+              <td>고딕(자전거 반납) ➔ 라 푸비야</td>
+              <td>약 3.2km / 12분</td>
+              <td><span class="tag-badge tag-red">메트로 L3 (Liceu ➔ Fontana)</span></td>
+              <td>L3 직통 12분 소요 (Fontana역 하차 후 도보 4분, T-Casual 1회 사용).</td>
+            </tr>
+            <tr>
+              <td><strong>바르셀로나 (Day 15)</strong></td>
+              <td>그라시아 ➔ 아레나 몰 & 몬주익</td>
+              <td>약 3.8km / 12분</td>
+              <td><span class="tag-badge tag-red">메트로 L3 (Fontana ➔ Espanya)</span></td>
+              <td>환승 없이 직통 12분 소요 (에스파냐 역 1/2번 출구 앞 아레나 몰 직결).</td>
+            </tr>
+            <tr>
+              <td><strong>바르셀로나 (Day 15)</strong></td>
+              <td>에스파냐 광장 ➔ 숙소(카탈루냐 역)</td>
+              <td>약 2.5km / 8분</td>
+              <td><span class="tag-badge tag-red">메트로 L1 또는 L3</span></td>
+              <td>분수쇼 관람 후 메트로 직통 복귀 (T-Casual 사용, 심야 안전 복귀).</td>
+            </tr>
+            <tr>
+              <td><strong>바르셀로나 (Day 16)</strong></td>
+              <td>카탈루냐 광장 ➔ 공항(BCN T1)</td>
+              <td>약 13km / 35분</td>
+              <td><span class="tag-badge tag-red">공항버스 Aerobús A1</span> / 택시</td>
+              <td>광장 앞 승강장 탑승 (왕복권/카드) 또는 숙소 앞 택시(약 €30~€35, 25분).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3. 포르투갈 & 스페인 도시별 관광세(숙박세) 총정리 -->
+    <div class="info-card">
+      <div class="info-card-header">🏨 포르투갈 & 스페인 도시별 관광세(숙박세) 총정리</div>
+      <p style="font-size:0.83rem; color:var(--text-muted); margin-bottom:6px;">관광세는 예약 플랫폼(아고다 등) 사전 결제에 포함되지 않으며, 호텔 체크인(또는 체크아웃) 시 프런트에서 신용카드나 현금으로 별도 현장 결제합니다.</p>
+      <div class="table-responsive">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>국가</th>
+              <th>도시</th>
+              <th>1인 1박 기준 요금</th>
+              <th>2인 1박 요금 (합산)</th>
+              <th>부과 기준 및 상한 규정</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🇵🇹 포르투갈</td>
+              <td><strong>리스본 (Lisbon)</strong></td>
+              <td>€4.00</td>
+              <td>€8.00</td>
+              <td>만 13세 이상 부과, 숙소당 최대 7박까지만 청구 (최대 €28/인).</td>
+            </tr>
+            <tr>
+              <td>🇵🇹 포르투갈</td>
+              <td><strong>포르투 (Porto)</strong></td>
+              <td>€3.00</td>
+              <td>€6.00</td>
+              <td>만 13세 이상 부과, 숙소당 최대 7박까지만 청구 (가이아 지역도 유사).</td>
+            </tr>
+            <tr>
+              <td>🇪🇸 스페인</td>
+              <td><strong>세비야 (Seville)</strong></td>
+              <td><span class="tag-badge tag-green">€0 (면제)</span></td>
+              <td><span class="tag-badge tag-green">€0</span></td>
+              <td>안달루시아 자치주는 관광세 규정이 없어 추가 청구 없음.</td>
+            </tr>
+            <tr>
+              <td>🇪🇸 스페인</td>
+              <td><strong>그라나다 (Granada)</strong></td>
+              <td><span class="tag-badge tag-green">€0 (면제)</span></td>
+              <td><span class="tag-badge tag-green">€0</span></td>
+              <td>안달루시아 자치주는 관광세 규정이 없어 추가 청구 없음.</td>
+            </tr>
+            <tr>
+              <td>🇪🇸 스페인</td>
+              <td><strong>바르셀로나 (Barcelona)</strong></td>
+              <td>약 €6.75 ~ €7.00 (3성급)</td>
+              <td>약 €13.50 ~ €14.00</td>
+              <td>카탈루냐 주세 + 바르셀로나 시 할증 합산 청구 (만 17세 이상, 최대 7박 한도).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:12px; background:#fffbeb; border-left:4px solid #d97706; padding:12px 14px; border-radius:0 8px 8px 0; font-size:0.85rem; color:#92400e; line-height:1.55;">
+        💡 <strong>바르셀로나 숙박세 실전 팁:</strong><br>
+        바르셀로나 숙소인 <strong>호텔 데니트(Hotel Denit, 3성급)</strong> 기준 <strong>4박</strong>을 체류하시므로, <strong>2인 총합 약 €54 ~ €56 내외</strong>가 체크인 시 프런트 결제 금액으로 청구됩니다. 해외 결제용 신용카드로 간편하게 결제하실 수 있습니다.
+      </div>
+    </div>
 
     <!-- Helpful Tips -->
     <div class="info-box">
